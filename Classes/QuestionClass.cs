@@ -10,6 +10,7 @@ namespace PhysicsQuiz1._0.Classes
 {
     public class QuestionClass
     {
+        //Test
         public List<StoredQuestions> GetQuestionsExistingDifficulty(string search, int topic1, int topic2, int topic3, int topic4, int topic5, int difficulty, int difficulty2, int difficulty3, int area, int area2)
         {
             if (search == "")
