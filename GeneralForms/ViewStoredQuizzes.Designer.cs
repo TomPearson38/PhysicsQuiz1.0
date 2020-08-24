@@ -83,7 +83,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.32132F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.67868F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel2.Controls.Add(this.ReturnButton, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.SearchButton, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.SearchBarTextBox, 1, 0);
@@ -112,9 +112,9 @@
             // 
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SearchButton.Location = new System.Drawing.Point(430, 9);
+            this.SearchButton.Location = new System.Drawing.Point(429, 9);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(53, 23);
+            this.SearchButton.Size = new System.Drawing.Size(54, 23);
             this.SearchButton.TabIndex = 12;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.SearchBarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.SearchBarTextBox.Location = new System.Drawing.Point(155, 10);
             this.SearchBarTextBox.Name = "SearchBarTextBox";
-            this.SearchBarTextBox.Size = new System.Drawing.Size(269, 20);
+            this.SearchBarTextBox.Size = new System.Drawing.Size(268, 20);
             this.SearchBarTextBox.TabIndex = 11;
             this.SearchBarTextBox.TextChanged += new System.EventHandler(this.SearchBarTextBox_TextChanged);
             // 
@@ -239,6 +239,7 @@
             this.ExpandButton.TabIndex = 10;
             this.ExpandButton.Text = "Study";
             this.ExpandButton.UseVisualStyleBackColor = true;
+            this.ExpandButton.Click += new System.EventHandler(this.ExpandButton_Click);
             // 
             // ViewStoredQuizzes
             // 

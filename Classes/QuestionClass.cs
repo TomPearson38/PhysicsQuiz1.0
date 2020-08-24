@@ -104,5 +104,21 @@ namespace PhysicsQuiz1._0.Classes
                 return questions;
             }
         }
+
+        public CompletedQuiz GetCompletedQuiz(int QuizId, int StudentId)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                try
+                {
+                    var Quiz = connection.QuerySingle<CompletedQuiz>("exec dbo.spCompletedQuiz_GetQuiz @quizId, @studentId", new { quizId = QuizId, studentId = StudentId });
+                    return Quiz;
+                }
+                catch(Exception)
+                {
+                    return new CompletedQuiz();
+                };
+            }
+        }
     }
 }

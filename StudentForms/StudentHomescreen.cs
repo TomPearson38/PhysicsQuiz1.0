@@ -44,7 +44,7 @@ namespace PhysicsQuiz1._0.StudentForms
             ViewAllQuestionsForm pq = new ViewAllQuestionsForm();
             this.Hide();
             pq.Show();
-            pq.ClosedPage += (source, SelectedExercise) =>
+            pq.ClosedPage += (source, EventArgs) =>
             {
                 this.Show();
             };
@@ -67,7 +67,7 @@ namespace PhysicsQuiz1._0.StudentForms
             GenerateQuizManual gq = new GenerateQuizManual();
             this.Hide();
             gq.Show();
-            gq.ClosedPage += (source, SelectedExercise) =>
+            gq.ClosedPage += (source, EventArgs) =>
             {
                 this.Show();
             };
@@ -78,7 +78,20 @@ namespace PhysicsQuiz1._0.StudentForms
             ViewStoredQuizzes SQ = new ViewStoredQuizzes();
             this.Hide();
             SQ.Show();
-            SQ.ClosedPage += (source, SelectedExercise) =>
+            SQ.ClosedPage += (source, EventArgs) =>
+            {
+                this.Show();
+            };
+
+            SQ.SelectedQuiz += ViewStatsCall;
+        }
+
+        private void ViewStatsCall(ViewStoredQuizzes VS,StoredQuizzes storedQuizzes, List<StoredQuestions> storedQuestions)
+        {
+            ViewStats vs = new ViewStats(student, storedQuizzes, storedQuestions);
+            vs.Show();
+
+            vs.FormClosed += (source, EventArgs) =>
             {
                 this.Show();
             };

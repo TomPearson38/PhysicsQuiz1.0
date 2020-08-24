@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.StudentNameLabel = new System.Windows.Forms.Label();
-            this.StudentInputNameLabel = new System.Windows.Forms.Label();
-            this.ClassIdLabel = new System.Windows.Forms.Label();
             this.InputClassIdLabel = new System.Windows.Forms.Label();
+            this.ClassIdLabel = new System.Windows.Forms.Label();
+            this.StudentInputNameLabel = new System.Windows.Forms.Label();
+            this.StudentNameLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.QuestionColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AreaColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,12 +43,10 @@
             this.TimesCorrect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.KnowledgeColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GolbalDifficultyRating = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -69,26 +68,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1344, 459);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.QuestionColumn,
-            this.AreaColumn,
-            this.Topic,
-            this.TimesAnswered,
-            this.TimesCorrect,
-            this.KnowledgeColumn,
-            this.GolbalDifficultyRating});
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 79);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1217, 245);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -113,23 +92,14 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(109, 453);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // StudentNameLabel
+            // InputClassIdLabel
             // 
-            this.StudentNameLabel.AutoSize = true;
-            this.StudentNameLabel.Location = new System.Drawing.Point(3, 0);
-            this.StudentNameLabel.Name = "StudentNameLabel";
-            this.StudentNameLabel.Size = new System.Drawing.Size(44, 26);
-            this.StudentNameLabel.TabIndex = 0;
-            this.StudentNameLabel.Text = "Student:";
-            // 
-            // StudentInputNameLabel
-            // 
-            this.StudentInputNameLabel.AutoSize = true;
-            this.StudentInputNameLabel.Location = new System.Drawing.Point(53, 0);
-            this.StudentInputNameLabel.Name = "StudentInputNameLabel";
-            this.StudentInputNameLabel.Size = new System.Drawing.Size(49, 26);
-            this.StudentInputNameLabel.TabIndex = 1;
-            this.StudentInputNameLabel.Text = "########";
+            this.InputClassIdLabel.AutoSize = true;
+            this.InputClassIdLabel.Location = new System.Drawing.Point(53, 72);
+            this.InputClassIdLabel.Name = "InputClassIdLabel";
+            this.InputClassIdLabel.Size = new System.Drawing.Size(35, 13);
+            this.InputClassIdLabel.TabIndex = 3;
+            this.InputClassIdLabel.Text = "####";
             // 
             // ClassIdLabel
             // 
@@ -140,14 +110,58 @@
             this.ClassIdLabel.TabIndex = 2;
             this.ClassIdLabel.Text = "Class:";
             // 
-            // InputClassIdLabel
+            // StudentInputNameLabel
             // 
-            this.InputClassIdLabel.AutoSize = true;
-            this.InputClassIdLabel.Location = new System.Drawing.Point(53, 72);
-            this.InputClassIdLabel.Name = "InputClassIdLabel";
-            this.InputClassIdLabel.Size = new System.Drawing.Size(35, 13);
-            this.InputClassIdLabel.TabIndex = 3;
-            this.InputClassIdLabel.Text = "####";
+            this.StudentInputNameLabel.AutoSize = true;
+            this.StudentInputNameLabel.Location = new System.Drawing.Point(53, 0);
+            this.StudentInputNameLabel.Name = "StudentInputNameLabel";
+            this.StudentInputNameLabel.Size = new System.Drawing.Size(49, 26);
+            this.StudentInputNameLabel.TabIndex = 1;
+            this.StudentInputNameLabel.Text = "########";
+            // 
+            // StudentNameLabel
+            // 
+            this.StudentNameLabel.AutoSize = true;
+            this.StudentNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.StudentNameLabel.Name = "StudentNameLabel";
+            this.StudentNameLabel.Size = new System.Drawing.Size(44, 26);
+            this.StudentNameLabel.TabIndex = 0;
+            this.StudentNameLabel.Text = "Student:";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.listView1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(118, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.78322F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.21678F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1223, 453);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.QuestionColumn,
+            this.AreaColumn,
+            this.Topic,
+            this.TimesAnswered,
+            this.TimesCorrect,
+            this.KnowledgeColumn,
+            this.GolbalDifficultyRating});
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 79);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1217, 245);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // QuestionColumn
             // 
@@ -182,40 +196,6 @@
             this.GolbalDifficultyRating.Text = "DifficultyRating";
             this.GolbalDifficultyRating.Width = 101;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.listView1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(118, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.78322F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.21678F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1223, 453);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.38298F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.61702F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 783F));
-            this.tableLayoutPanel4.Controls.Add(this.button4, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button3, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1217, 70);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -225,16 +205,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(162, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 64);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -255,6 +225,24 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.38298F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.61702F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 783F));
+            this.tableLayoutPanel4.Controls.Add(this.button4, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button3, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1217, 70);
+            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // ViewStats
             // 
@@ -293,7 +281,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
 }
