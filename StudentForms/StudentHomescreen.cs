@@ -86,9 +86,9 @@ namespace PhysicsQuiz1._0.StudentForms
             SQ.SelectedQuiz += ViewStatsCall;
         }
 
-        private void ViewStatsCall(ViewStoredQuizzes VS,StoredQuizzes storedQuizzes, List<StoredQuestions> storedQuestions)
+        private void ViewStatsCall(ViewStoredQuizzes VS,StoredQuizzes storedQuizzes, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
         {
-            ViewStats vs = new ViewStats(student, storedQuizzes, storedQuestions);
+            ViewStats vs = new ViewStats(student, storedQuizzes, storedQuestions, storedQuizQuestions);
             vs.Show();
 
             vs.FormClosed += (source, EventArgs) =>

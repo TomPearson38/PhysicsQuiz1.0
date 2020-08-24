@@ -29,32 +29,11 @@ namespace PhysicsQuiz1._0.Classes
             }
         }
 
-        public List<StoredQuestions> FindQuestions(StoredQuizzes SelectedQuiz)
+        public List<StoredQuizQuestions> FindQuestionsId(StoredQuizzes SelectedQuiz)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
             {
-                var parameters = new
-                {
-                    question1 = SelectedQuiz.Question1,
-                    question2 = SelectedQuiz.Question2,
-                    question3 = SelectedQuiz.Question3,
-                    question4 = SelectedQuiz.Question4,
-                    question5 = SelectedQuiz.Question5,
-                    question6 = SelectedQuiz.Question6,
-                    question7 = SelectedQuiz.Question7,
-                    question8 = SelectedQuiz.Question8,
-                    question9 = SelectedQuiz.Question9,
-                    question10 = SelectedQuiz.Question10,
-                    question11 = SelectedQuiz.Question11,
-                    question12 = SelectedQuiz.Question12,
-                    question13 = SelectedQuiz.Question13,
-                    question14 = SelectedQuiz.Question14,
-                    question15 = SelectedQuiz.Question15,
-                };
-
-                var questions = connection.Query<StoredQuestions>("dbo.StoredQuestions_FindQuestions @question1, @question2, @question3, @question4, @question5, @question6, " +
-                    "@question7, @question8, @question9, @question10, @question11, @question12, @question13, @question14, @question15", parameters).ToList();
-
+                var questions = connection.Query<StoredQuizQuestions>("exec dbo.StoredQuizQuestions_GetQuestons @QuizId", new { QuizId = SelectedQuiz.QuizId }).ToList();
                 return questions;
             }
         }
@@ -105,6 +84,20 @@ namespace PhysicsQuiz1._0.Classes
             }
         }
 
+        public List<StoredQuestions> GetStoredQuizQuestions(List<StoredQuizQuestions> SelectedQuiz)
+        {
+            List<StoredQuestions> sq = new List<StoredQuestions>();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                foreach (StoredQuizQuestions a in SelectedQuiz)
+                {
+                    var questions = connection.QuerySingle<StoredQuestions>("exec dbo.StoredQuestions_FindQuestions @question", new { question = a.QuestionId });
+                    sq.Add(questions);
+                }
+                return sq;
+            }
+        }
+
         public CompletedQuiz GetCompletedQuiz(int QuizId, int StudentId)
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
@@ -119,6 +112,37 @@ namespace PhysicsQuiz1._0.Classes
                     return new CompletedQuiz();
                 };
             }
+        }
+
+        public CompletedQuiz CreateCompletedQuiz(CompletedQuiz quiz)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                var Quiz = connection.QuerySingle<CompletedQuiz>("exec dbo.CompletedQuiz_CreateQuiz @quizId, @studentId, @length", new { quizId = quiz.Id, studentId = quiz.StudentId, length = quiz.Length });
+                return Quiz;
+            }
+        }
+
+        public List<CompletedQuestion> GetCompletedQuestion(CompletedQuiz cq, List<StoredQuizQuestions> SQS)
+        {
+            List<CompletedQuestion> CQ = new List<CompletedQuestion>();
+            CompletedQuestion question = new CompletedQuestion();
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                foreach(StoredQuizQuestions QuizQuestion in SQS)
+                {
+                    try
+                    {
+                        question = connection.QuerySingle<CompletedQuestion>("exec dbo.CompletedQuestion_GetQuestion @questionId, @studentId", new { questionId = QuizQuestion.QuestionId, studentId = cq.StudentId });
+                    }
+                    catch(Exception)
+                    {
+                        question = connection.QuerySingle<CompletedQuestion>(" dbo.CompletedQuestion_Create @questionId, @studentId", new { questionId = QuizQuestion.QuestionId, studentId = cq.StudentId });
+                    }
+                    CQ.Add(question);
+                }
+            }
+            return CQ;
         }
     }
 }

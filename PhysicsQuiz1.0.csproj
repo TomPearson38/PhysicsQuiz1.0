@@ -50,12 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CompletedQuestion.cs" />
     <Compile Include="Classes\CompletedQuiz.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\QuestionClass.cs" />
     <Compile Include="Classes\StoredQuestions.cs" />
     <Compile Include="Classes\StoredQuizzes.cs" />
+    <Compile Include="Classes\StoredQuizQuestions.cs" />
     <Compile Include="Classes\StudentLogin.cs" />
     <Compile Include="Classes\TClass.cs" />
     <Compile Include="Classes\TeacherLogin.cs" />

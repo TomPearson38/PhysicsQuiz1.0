@@ -15,10 +15,11 @@ namespace PhysicsQuiz1._0.StudentForms
     {
         public List<StoredQuizzes> Quizzes = new List<StoredQuizzes>();
         public List<StoredQuestions> SelectedQuestions = new List<StoredQuestions>();
+        public List<StoredQuizQuestions> SelectedQuestionsId = new List<StoredQuizQuestions>();
         public StoredQuizzes ChosenQuiz = new StoredQuizzes();
 
         public event EventHandler ClosedPage;
-        public event Action<ViewStoredQuizzes ,StoredQuizzes, List<StoredQuestions>> SelectedQuiz;
+        public event Action<ViewStoredQuizzes ,StoredQuizzes, List<StoredQuestions>, List<StoredQuizQuestions>> SelectedQuiz;
 
         bool formclosing = false;
 
@@ -53,7 +54,8 @@ namespace PhysicsQuiz1._0.StudentForms
             ChosenQuiz = (StoredQuizzes)QuizListBox.SelectedItem;
             InsertQuizNameLabel.Text = ChosenQuiz.Name;
             QuestionClass qc = new QuestionClass();
-            SelectedQuestions = qc.FindQuestions(ChosenQuiz);
+            SelectedQuestionsId = qc.FindQuestionsId(ChosenQuiz);
+            SelectedQuestions = qc.GetStoredQuizQuestions(SelectedQuestionsId);
             QuestionsListBox.DataSource = SelectedQuestions;
             QuestionsListBox.DisplayMember = "Question";
         }
@@ -96,7 +98,7 @@ namespace PhysicsQuiz1._0.StudentForms
         {
             formclosing = true;
             this.Close();
-            SelectedQuiz?.Invoke(this, ChosenQuiz, SelectedQuestions);
+            SelectedQuiz?.Invoke(this, ChosenQuiz, SelectedQuestions, SelectedQuestionsId);
         }
     }
 }

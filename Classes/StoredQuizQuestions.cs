@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace PhysicsQuiz1._0.Classes
 {
-    public class StoredQuizzes
+    public class StoredQuizQuestions
     {
         public int QuizId { get; set; }
-        public string Name { get; set; }
-        public int Length { get; set; }
+        public int QuestionId { get; set; }
     }
 }

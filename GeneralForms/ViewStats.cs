@@ -14,30 +14,25 @@ namespace PhysicsQuiz1._0.GeneralForms
 {
     public partial class ViewStats : Form
     {
-        public ViewStats(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions)
+        List<CompletedQuestion> completedQuestion = new List<CompletedQuestion>();
+
+        public ViewStats(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
         {
             InitializeComponent();
 
             QuestionClass qc = new QuestionClass();
 
-            CompletedQuiz CQuiz = qc.GetCompletedQuiz(SQuiz.Id, student.StudentId);
+            CompletedQuiz CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
 
             if(CQuiz == null)
             {
-                CQuiz.Id = SQuiz.Id;
+                CQuiz.Id = SQuiz.QuizId;
                 CQuiz.StudentId = student.StudentId;
                 CQuiz.Length = SQuiz.Length;
+                CQuiz = qc.CreateCompletedQuiz(CQuiz);
             }
-            
 
-            ListViewItem a = new ListViewItem("Question");
-            a.SubItems.Add("1");
-            a.SubItems.Add("2");
-            a.SubItems.Add("3");
-            a.SubItems.Add("4");
-            a.SubItems.Add("5");
-
-            listView1.Items.Add(a);
+            completedQuestion = qc.GetCompletedQuestion(CQuiz, storedQuizQuestions);
 
             foreach(StoredQuestions sq in storedQuestions)
             {
@@ -63,7 +58,17 @@ namespace PhysicsQuiz1._0.GeneralForms
                 {
                     b.SubItems.Add("Electricity");
                 }
-                b.SubItems.Add(CQuiz.Times)
+
+                foreach (CompletedQuestion cq in completedQuestion)
+                {
+                    if(cq.QuestionId == sq.QuestionId)
+                    {
+                        b.SubItems.Add(cq.XCompleted.ToString());
+                        b.SubItems.Add(cq.XCorrect.ToString());
+                        break;
+                    }
+                }
+                listView1.Items.Add(b);
             }
 
 
