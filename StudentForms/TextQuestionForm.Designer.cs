@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextQuestionForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.AnswerRadioButton4 = new System.Windows.Forms.RadioButton();
             this.AnswerRadioButton3 = new System.Windows.Forms.RadioButton();
             this.AnswerRadioButton2 = new System.Windows.Forms.RadioButton();
             this.AnswerRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.QuestionLabel = new System.Windows.Forms.Label();
+            this.SubmitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,10 +50,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.SubmitButton, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(233, 55);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(623, 476);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
@@ -67,7 +69,7 @@
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton3, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.QuestionLabel, 0, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -77,16 +79,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(617, 352);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(106, 256);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // AnswerRadioButton4
             // 
             this.AnswerRadioButton4.AutoSize = true;
             this.AnswerRadioButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton4.Location = new System.Drawing.Point(3, 289);
+            this.AnswerRadioButton4.Location = new System.Drawing.Point(3, 193);
             this.AnswerRadioButton4.Name = "AnswerRadioButton4";
-            this.AnswerRadioButton4.Size = new System.Drawing.Size(611, 60);
+            this.AnswerRadioButton4.Size = new System.Drawing.Size(100, 60);
             this.AnswerRadioButton4.TabIndex = 17;
             this.AnswerRadioButton4.TabStop = true;
             this.AnswerRadioButton4.Text = "D";
@@ -96,9 +98,9 @@
             // 
             this.AnswerRadioButton3.AutoSize = true;
             this.AnswerRadioButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton3.Location = new System.Drawing.Point(3, 235);
+            this.AnswerRadioButton3.Location = new System.Drawing.Point(3, 139);
             this.AnswerRadioButton3.Name = "AnswerRadioButton3";
-            this.AnswerRadioButton3.Size = new System.Drawing.Size(611, 48);
+            this.AnswerRadioButton3.Size = new System.Drawing.Size(100, 48);
             this.AnswerRadioButton3.TabIndex = 16;
             this.AnswerRadioButton3.TabStop = true;
             this.AnswerRadioButton3.Text = "C";
@@ -108,9 +110,9 @@
             // 
             this.AnswerRadioButton2.AutoSize = true;
             this.AnswerRadioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton2.Location = new System.Drawing.Point(3, 177);
+            this.AnswerRadioButton2.Location = new System.Drawing.Point(3, 81);
             this.AnswerRadioButton2.Name = "AnswerRadioButton2";
-            this.AnswerRadioButton2.Size = new System.Drawing.Size(611, 52);
+            this.AnswerRadioButton2.Size = new System.Drawing.Size(100, 52);
             this.AnswerRadioButton2.TabIndex = 15;
             this.AnswerRadioButton2.TabStop = true;
             this.AnswerRadioButton2.Text = "B";
@@ -120,25 +122,36 @@
             // 
             this.AnswerRadioButton1.AutoSize = true;
             this.AnswerRadioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton1.Location = new System.Drawing.Point(3, 123);
+            this.AnswerRadioButton1.Location = new System.Drawing.Point(3, 27);
             this.AnswerRadioButton1.Name = "AnswerRadioButton1";
-            this.AnswerRadioButton1.Size = new System.Drawing.Size(611, 48);
+            this.AnswerRadioButton1.Size = new System.Drawing.Size(100, 48);
             this.AnswerRadioButton1.TabIndex = 13;
             this.AnswerRadioButton1.TabStop = true;
             this.AnswerRadioButton1.Text = "A";
             this.AnswerRadioButton1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // QuestionLabel
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(611, 120);
-            this.label1.TabIndex = 18;
-            this.label1.Text = resources.GetString("label1.Text");
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QuestionLabel.AutoEllipsis = true;
+            this.QuestionLabel.AutoSize = true;
+            this.QuestionLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.QuestionLabel.Location = new System.Drawing.Point(3, 0);
+            this.QuestionLabel.Name = "QuestionLabel";
+            this.QuestionLabel.Size = new System.Drawing.Size(100, 24);
+            this.QuestionLabel.TabIndex = 18;
+            this.QuestionLabel.Text = "#########";
+            this.QuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SubmitButton
+            // 
+            this.SubmitButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SubmitButton.Location = new System.Drawing.Point(3, 441);
+            this.SubmitButton.Name = "SubmitButton";
+            this.SubmitButton.Size = new System.Drawing.Size(617, 23);
+            this.SubmitButton.TabIndex = 11;
+            this.SubmitButton.Text = "Submit";
+            this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // TextQuestionForm
             // 
@@ -165,6 +178,7 @@
         private System.Windows.Forms.RadioButton AnswerRadioButton3;
         private System.Windows.Forms.RadioButton AnswerRadioButton2;
         private System.Windows.Forms.RadioButton AnswerRadioButton1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label QuestionLabel;
+        private System.Windows.Forms.Button SubmitButton;
     }
 }

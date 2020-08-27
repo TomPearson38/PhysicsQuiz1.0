@@ -111,6 +111,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuizForms\StartQuizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizForms\StartQuizForm.Designer.cs">
+      <DependentUpon>StartQuizForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentForms\PictureQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuizForms\StartQuizForm.resx">
+      <DependentUpon>StartQuizForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentForms\PictureQuestionForm.resx">
       <DependentUpon>PictureQuestionForm.cs</DependentUpon>
     </EmbeddedResource>

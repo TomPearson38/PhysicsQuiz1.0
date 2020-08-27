@@ -95,6 +95,11 @@ namespace PhysicsQuiz1._0.StudentForms
             {
                 this.Show();
             };
+
+            vs.OpenStoredQuizzes += (source, EventArgs) =>
+            {
+                button3_Click(null, EventArgs.Empty);
+            };
         }
 
     }

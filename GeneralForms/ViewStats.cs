@@ -1,5 +1,6 @@
 ﻿using PhysicsQuiz1._0.Classes;
 using PhysicsQuiz1._0.LoginScreen;
+using PhysicsQuiz1._0.QuizForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,33 @@ namespace PhysicsQuiz1._0.GeneralForms
 {
     public partial class ViewStats : Form
     {
+        private StudentLogin Student = new StudentLogin();
+
+        List<StoredQuestions> ListOfStoredQuestions = new List<StoredQuestions>();
+
+        StoredQuizzes SelectedQuiz = new StoredQuizzes();
+
+        List<StoredQuestions> QuizQuestions = new List<StoredQuestions>();
+
+        List<StoredQuizQuestions> QuizQuestionsId = new List<StoredQuizQuestions>();
+
         List<CompletedQuestion> completedQuestion = new List<CompletedQuestion>();
+
+        CompletedQuiz CQuiz = new CompletedQuiz();
+
+        public event EventHandler OpenStoredQuizzes;
 
         public ViewStats(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
         {
             InitializeComponent();
 
+            StudentInputNameLabel.Text = ($"{student.FistName} {student.SecondName}");
+
+            InputClassIdLabel.Text = student.ClassId.ToString();
+
             QuestionClass qc = new QuestionClass();
 
-            CompletedQuiz CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
+            CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
 
             if(CQuiz == null)
             {
@@ -71,12 +90,45 @@ namespace PhysicsQuiz1._0.GeneralForms
                 listView1.Items.Add(b);
             }
 
+            Student = student;
 
+            ListOfStoredQuestions = storedQuestions;
+
+            SelectedQuiz = SQuiz;
+
+            QuizQuestions = storedQuestions;
+
+            QuizQuestionsId = storedQuizQuestions;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ReturnButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ReturnedToStoredQuizzesButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            OpenStoredQuizzes?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void GenerateReportButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudyButton_Click(object sender, EventArgs e)
+        {
+            StartQuizForm SQF = new StartQuizForm(Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, CQuiz, completedQuestion);
+
+            this.Hide();
+
+            SQF.Show();
         }
     }
 }
