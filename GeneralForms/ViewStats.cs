@@ -34,6 +34,11 @@ namespace PhysicsQuiz1._0.GeneralForms
         public ViewStats(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
         {
             InitializeComponent();
+            setup(student, SQuiz, storedQuestions, storedQuizQuestions);
+        }
+
+        private void setup(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
+        {
 
             StudentInputNameLabel.Text = ($"{student.FistName} {student.SecondName}");
 
@@ -43,7 +48,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
 
-            if(CQuiz == null)
+            if (CQuiz == null)
             {
                 CQuiz.Id = SQuiz.QuizId;
                 CQuiz.StudentId = student.StudentId;
@@ -53,7 +58,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             completedQuestion = qc.GetCompletedQuestion(CQuiz, storedQuizQuestions);
 
-            foreach(StoredQuestions sq in storedQuestions)
+            foreach (StoredQuestions sq in storedQuestions)
             {
                 ListViewItem b = new ListViewItem(sq.Question);
                 b.SubItems.Add(sq.Area.ToString());
@@ -80,7 +85,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
                 foreach (CompletedQuestion cq in completedQuestion)
                 {
-                    if(cq.QuestionId == sq.QuestionId)
+                    if (cq.QuestionId == sq.QuestionId)
                     {
                         b.SubItems.Add(cq.XCompleted.ToString());
                         b.SubItems.Add(cq.XCorrect.ToString());
@@ -100,6 +105,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             QuizQuestionsId = storedQuizQuestions;
         }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -129,6 +135,19 @@ namespace PhysicsQuiz1._0.GeneralForms
             this.Hide();
 
             SQF.Show();
+
+            SQF.CompletedQuiz += NewViewStats;
+
+            SQF.FormClosed += (source, EventArgs) =>
+            {
+                this.Show();
+            };
+
+        }
+
+        private void NewViewStats(ViewStats vs, StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
+        {
+            setup(student, SQuiz, storedQuestions, storedQuizQuestions);
         }
     }
 }

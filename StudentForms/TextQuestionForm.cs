@@ -16,11 +16,15 @@ namespace PhysicsQuiz1._0.StudentForms
     {
         private Random Dice = new Random();
 
+        public event EventHandler<bool> Answered;
+
         StoredQuestions CurrentQuestion = new StoredQuestions();
 
         public TextQuestionForm(StoredQuestions CQuestions)
         {
             InitializeComponent();
+
+            CurrentQuestion = CQuestions;
 
             QuestionLabel.Text = CurrentQuestion.Question;
 
@@ -33,26 +37,49 @@ namespace PhysicsQuiz1._0.StudentForms
 
             Answers = Answers.OrderBy(x => Guid.NewGuid()).ToList();
 
-            AnswerRadioButton1.Text = Answers.ElementAt(0);
-            AnswerRadioButton2.Text = Answers.ElementAt(1);
-            AnswerRadioButton3.Text = Answers.ElementAt(2);
-            AnswerRadioButton4.Text = Answers.ElementAt(3);
-
-            CurrentQuestion = CQuestions;
+            AnswerRadioButton1.Text = $"{Answers.ElementAt(0)}";
+            AnswerRadioButton2.Text = $"{ Answers.ElementAt(1)}";
+            AnswerRadioButton3.Text = $"{ Answers.ElementAt(2)}";
+            AnswerRadioButton4.Text = $"{ Answers.ElementAt(3)}";
         }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            var checkedButton = Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            RadioButton checkedButton;
 
-            if (checkedButton.Text == CurrentQuestion.CorrectAns)
+            if (AnswerRadioButton1.Checked == true)
             {
-
+                checkedButton = AnswerRadioButton1;
+            }
+            else if (AnswerRadioButton2.Checked == true)
+            {
+                checkedButton = AnswerRadioButton2;
+            }
+            else if (AnswerRadioButton3.Checked == true)
+            {
+                checkedButton = AnswerRadioButton3;
+            }
+            else if (AnswerRadioButton4.Checked == true)
+            {
+                checkedButton = AnswerRadioButton4;
             }
             else
             {
-
+                return;
             }
+
+            if (checkedButton.Text == CurrentQuestion.CorrectAns)
+            {
+                MessageBox.Show("Correct", "Well Done", MessageBoxButtons.OK);
+                Answered?.Invoke(this, true);
+            }
+            else
+            {
+                MessageBox.Show("Incorrect", "Try Again", MessageBoxButtons.OK);
+                Answered?.Invoke(this, false);
+            }
+
+            this.Close();
         }
     }
     

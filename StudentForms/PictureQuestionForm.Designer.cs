@@ -36,7 +36,8 @@
             this.AnswerRadioButton3 = new System.Windows.Forms.RadioButton();
             this.AnswerRadioButton2 = new System.Windows.Forms.RadioButton();
             this.AnswerRadioButton1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.QuestionLabel = new System.Windows.Forms.Label();
+            this.SubmitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuestionPictureBox)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -75,22 +76,24 @@
             this.tableLayoutPanel2.AutoScroll = true;
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton4, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton3, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton2, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.QuestionLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.SubmitButton, 0, 5);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(412, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(521, 376);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(521, 434);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // AnswerRadioButton4
@@ -141,17 +144,28 @@
             this.AnswerRadioButton1.Text = "A";
             this.AnswerRadioButton1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // QuestionLabel
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(515, 144);
-            this.label1.TabIndex = 18;
-            this.label1.Text = resources.GetString("label1.Text");
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QuestionLabel.AutoEllipsis = true;
+            this.QuestionLabel.AutoSize = true;
+            this.QuestionLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.QuestionLabel.Location = new System.Drawing.Point(3, 0);
+            this.QuestionLabel.Name = "QuestionLabel";
+            this.QuestionLabel.Size = new System.Drawing.Size(515, 144);
+            this.QuestionLabel.TabIndex = 18;
+            this.QuestionLabel.Text = resources.GetString("QuestionLabel.Text");
+            this.QuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SubmitButton
+            // 
+            this.SubmitButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SubmitButton.Location = new System.Drawing.Point(151, 379);
+            this.SubmitButton.Name = "SubmitButton";
+            this.SubmitButton.Size = new System.Drawing.Size(219, 52);
+            this.SubmitButton.TabIndex = 19;
+            this.SubmitButton.Text = "Submit";
+            this.SubmitButton.UseVisualStyleBackColor = true;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // PictureQuestionForm
             // 
@@ -180,6 +194,7 @@
         private System.Windows.Forms.RadioButton AnswerRadioButton3;
         private System.Windows.Forms.RadioButton AnswerRadioButton2;
         private System.Windows.Forms.RadioButton AnswerRadioButton1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label QuestionLabel;
+        private System.Windows.Forms.Button SubmitButton;
     }
 }
