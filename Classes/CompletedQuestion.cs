@@ -12,5 +12,6 @@ namespace PhysicsQuiz1._0.Classes
         public int QuestionId { get; set; }
         public int XCompleted { get; set; }
         public int XCorrect { get; set; }
+        public int CalculatedDifficulty { get; set; }
     }
 }

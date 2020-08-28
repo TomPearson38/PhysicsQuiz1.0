@@ -51,7 +51,7 @@
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.QuestionPictureBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(69, 58);
@@ -147,7 +147,6 @@
             // QuestionLabel
             // 
             this.QuestionLabel.AutoEllipsis = true;
-            this.QuestionLabel.AutoSize = true;
             this.QuestionLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.QuestionLabel.Location = new System.Drawing.Point(3, 0);
             this.QuestionLabel.Name = "QuestionLabel";
@@ -171,6 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1074, 593);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PictureQuestionForm";

@@ -34,29 +34,39 @@ namespace PhysicsQuiz1._0.GeneralForms
         public ViewStats(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
         {
             InitializeComponent();
-            setup(student, SQuiz, storedQuestions, storedQuizQuestions);
+            setup(student, SQuiz, storedQuestions, storedQuizQuestions, null);
         }
 
-        private void setup(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
+        private void setup(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions, List<CompletedQuestion> cquestion)
         {
 
-            StudentInputNameLabel.Text = ($"{student.FistName} {student.SecondName}");
 
-            InputClassIdLabel.Text = student.ClassId.ToString();
-
-            QuestionClass qc = new QuestionClass();
-
-            CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
-
-            if (CQuiz == null)
+            if (cquestion == null)
             {
-                CQuiz.Id = SQuiz.QuizId;
-                CQuiz.StudentId = student.StudentId;
-                CQuiz.Length = SQuiz.Length;
-                CQuiz = qc.CreateCompletedQuiz(CQuiz);
-            }
+                StudentInputNameLabel.Text = ($"{student.FistName} {student.SecondName}");
 
-            completedQuestion = qc.GetCompletedQuestion(CQuiz, storedQuizQuestions);
+                InputClassIdLabel.Text = student.ClassId.ToString();
+
+                QuestionClass qc = new QuestionClass();
+
+                CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
+
+                if (CQuiz == null)
+                {
+                    CQuiz.Id = SQuiz.QuizId;
+                    CQuiz.StudentId = student.StudentId;
+                    CQuiz.Length = SQuiz.Length;
+                    CQuiz = qc.CreateCompletedQuiz(CQuiz);
+                }
+
+                completedQuestion = qc.GetCompletedQuestion(CQuiz, storedQuizQuestions);
+            }
+            else
+            {
+                listView1.Items.Clear();
+                listView1.Refresh();
+                completedQuestion = cquestion;
+            }
 
             foreach (StoredQuestions sq in storedQuestions)
             {
@@ -89,11 +99,15 @@ namespace PhysicsQuiz1._0.GeneralForms
                     {
                         b.SubItems.Add(cq.XCompleted.ToString());
                         b.SubItems.Add(cq.XCorrect.ToString());
+                        string score = DifficultyScore(cq.CalculatedDifficulty);
+                        b.SubItems.Add(score);
+                        b.SubItems.Add(cq.CalculatedDifficulty.ToString());
                         break;
                     }
                 }
                 listView1.Items.Add(b);
             }
+
 
             Student = student;
 
@@ -104,6 +118,7 @@ namespace PhysicsQuiz1._0.GeneralForms
             QuizQuestions = storedQuestions;
 
             QuizQuestionsId = storedQuizQuestions;
+            
         }
 
 
@@ -145,9 +160,29 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         }
 
-        private void NewViewStats(ViewStats vs, StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
+        private void NewViewStats(StartQuizForm SQF, StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions, List<CompletedQuestion> cq)
         {
-            setup(student, SQuiz, storedQuestions, storedQuizQuestions);
+            setup(student, SQuiz, storedQuestions, storedQuizQuestions, cq);
+        }
+
+        private string DifficultyScore(int cq)
+        {
+            if(cq <= 20)
+            {
+                return "Poor";
+            }
+            else if (cq <= 40)
+            {
+                return "Worse";
+            }
+            else if (cq <= 60)
+            {
+                return "Good";
+            }
+            else
+            {
+                return "Great";
+            }
         }
     }
 }

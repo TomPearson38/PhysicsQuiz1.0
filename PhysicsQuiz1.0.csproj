@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CalculateDifficulty.cs" />
     <Compile Include="Classes\CompletedQuestion.cs" />
     <Compile Include="Classes\CompletedQuiz.cs" />
     <Compile Include="Classes\DataAccess.cs" />

@@ -30,11 +30,12 @@
         {
             this.QuizNameLabel = new System.Windows.Forms.Label();
             this.StartQuizButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SelectModeComboBox = new System.Windows.Forms.ComboBox();
             this.AdaptiveQuestionsLabel = new System.Windows.Forms.Label();
             this.DefaultQuestionsOrderLabel = new System.Windows.Forms.Label();
             this.ResetAdaptiveQuestionButton = new System.Windows.Forms.Button();
             this.ResetAdaptiveQuestionLabel = new System.Windows.Forms.Label();
+            this.ReturnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // QuizNameLabel
@@ -56,16 +57,16 @@
             this.StartQuizButton.UseVisualStyleBackColor = true;
             this.StartQuizButton.Click += new System.EventHandler(this.StartQuizButton_Click);
             // 
-            // comboBox1
+            // SelectModeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.SelectModeComboBox.FormattingEnabled = true;
+            this.SelectModeComboBox.Items.AddRange(new object[] {
             "Adaptive Questions Order",
             "Default Questions Order"});
-            this.comboBox1.Location = new System.Drawing.Point(380, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 2;
+            this.SelectModeComboBox.Location = new System.Drawing.Point(380, 74);
+            this.SelectModeComboBox.Name = "SelectModeComboBox";
+            this.SelectModeComboBox.Size = new System.Drawing.Size(174, 21);
+            this.SelectModeComboBox.TabIndex = 2;
             // 
             // AdaptiveQuestionsLabel
             // 
@@ -107,16 +108,27 @@
             this.ResetAdaptiveQuestionLabel.Text = "Reset Adaptive Question - This will reset the programs\r\nknowledge of your ability" +
     " and will revert its settings to\r\ndefault.";
             // 
+            // ReturnButton
+            // 
+            this.ReturnButton.Location = new System.Drawing.Point(12, 8);
+            this.ReturnButton.Name = "ReturnButton";
+            this.ReturnButton.Size = new System.Drawing.Size(89, 39);
+            this.ReturnButton.TabIndex = 7;
+            this.ReturnButton.Text = "Return";
+            this.ReturnButton.UseVisualStyleBackColor = true;
+            this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
+            // 
             // StartQuizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 499);
+            this.Controls.Add(this.ReturnButton);
             this.Controls.Add(this.ResetAdaptiveQuestionLabel);
             this.Controls.Add(this.ResetAdaptiveQuestionButton);
             this.Controls.Add(this.DefaultQuestionsOrderLabel);
             this.Controls.Add(this.AdaptiveQuestionsLabel);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.SelectModeComboBox);
             this.Controls.Add(this.StartQuizButton);
             this.Controls.Add(this.QuizNameLabel);
             this.Name = "StartQuizForm";
@@ -130,10 +142,11 @@
 
         private System.Windows.Forms.Label QuizNameLabel;
         private System.Windows.Forms.Button StartQuizButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox SelectModeComboBox;
         private System.Windows.Forms.Label AdaptiveQuestionsLabel;
         private System.Windows.Forms.Label DefaultQuestionsOrderLabel;
         private System.Windows.Forms.Button ResetAdaptiveQuestionButton;
         private System.Windows.Forms.Label ResetAdaptiveQuestionLabel;
+        private System.Windows.Forms.Button ReturnButton;
     }
 }

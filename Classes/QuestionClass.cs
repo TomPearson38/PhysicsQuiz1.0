@@ -144,5 +144,21 @@ namespace PhysicsQuiz1._0.Classes
             }
             return CQ;
         }
+
+        public void UpdateScores(List<StoredQuestions> sq, List<CompletedQuestion> cq)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                foreach (StoredQuestions storedQuestions in sq)
+                {
+                    connection.Execute("dbo.StoredQuestions_UpdateQuestion @questionid, @xanswered, @xcorrect, @difficulty ", new { questionid = storedQuestions.QuestionId, xanswered = storedQuestions.XAnswered, xcorrect = storedQuestions.XAnsweredCorrectly, difficulty = storedQuestions.CalculatedDifficulty});
+                }
+                foreach (CompletedQuestion compquestion in cq)
+                {
+                    connection.Execute("dbo.CompletedQuestions_UpdateQuestion @questionid, @xanswered, @xcorrect, @studentid, @difficulty ", new { questionid = compquestion.QuestionId, xanswered = compquestion.XCompleted, xcorrect = compquestion.XCorrect, studentid = compquestion.StudentId, difficulty = compquestion.CalculatedDifficulty });
+                }
+
+            }
+        }
     }
 }
