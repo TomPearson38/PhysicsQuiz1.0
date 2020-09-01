@@ -21,8 +21,6 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         StoredQuizzes SelectedQuiz = new StoredQuizzes();
 
-        List<StoredQuestions> QuizQuestions = new List<StoredQuestions>();
-
         List<StoredQuizQuestions> QuizQuestionsId = new List<StoredQuizQuestions>();
 
         List<CompletedQuestion> completedQuestion = new List<CompletedQuestion>();
@@ -115,8 +113,6 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             SelectedQuiz = SQuiz;
 
-            QuizQuestions = storedQuestions;
-
             QuizQuestionsId = storedQuizQuestions;
             
         }
@@ -158,6 +154,13 @@ namespace PhysicsQuiz1._0.GeneralForms
                 this.Show();
             };
 
+            SQF.ResetQuestion += (source, EventArgs) =>
+            {
+                NewViewStats(null, Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, null);
+                StudyButton_Click(this, EventArgs.Empty);
+                this.Hide();
+            };
+
         }
 
         private void NewViewStats(StartQuizForm SQF, StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions, List<CompletedQuestion> cq)
@@ -183,6 +186,20 @@ namespace PhysicsQuiz1._0.GeneralForms
             {
                 return "Great";
             }
+        }
+
+        private void ResetQuestionButton_Click(object sender, EventArgs e)
+        {
+            QuestionClass qc = new QuestionClass();
+
+            qc.ResetScores(completedQuestion);
+
+            completedQuestion = new List<CompletedQuestion>();
+
+            listView1.Items.Clear();
+            listView1.Refresh();
+
+            setup(Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, null);
         }
     }
 }

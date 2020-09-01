@@ -41,17 +41,24 @@ namespace PhysicsQuiz1._0.QuizForms
 
             CalculateDifficulty cd = new CalculateDifficulty();
 
-            if (SelectModeComboBox.SelectedItem.ToString() == "Adaptive Questions Order")
+            try
             {
-                foreach (CompletedQuestion cq in completedQuestion)
+                if (SelectModeComboBox.SelectedItem.ToString() == "Adaptive Questions Order")
                 {
-
-                    if ((cq.CalculatedDifficulty > 80) && (cq.XCompleted > 5))
+                    foreach (CompletedQuestion cq in completedQuestion)
                     {
-                        storedQuizQuestions.Remove(storedQuizQuestions.Find(x => x.QuestionId == cq.QuestionId));
+                        if ((cq.CalculatedDifficulty > 80) && (cq.XCompleted > 5))
+                        {
+                            storedQuizQuestions.Remove(storedQuizQuestions.Find(x => x.QuestionId == cq.QuestionId));
+                        }
                     }
                 }
             }
+            catch (System.NullReferenceException)
+            {
+
+            }
+
             List<StoredQuizQuestions> ShuffledQuizQuestions = storedQuizQuestions.OrderBy(x => Guid.NewGuid()).ToList();
 
             foreach (StoredQuizQuestions QuizQuestion in ShuffledQuizQuestions)

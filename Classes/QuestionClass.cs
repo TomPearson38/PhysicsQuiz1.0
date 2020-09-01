@@ -160,5 +160,16 @@ namespace PhysicsQuiz1._0.Classes
 
             }
         }
+
+        public void ResetScores(List<CompletedQuestion> cq)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                foreach(CompletedQuestion compquestion in cq)
+                {
+                    connection.Execute("dbo.CompltedQuestion_ResetQuestion @studentid, @questionid", new { studentid = compquestion.StudentId, questionid = compquestion.QuestionId });
+                }
+            }
+        }
     }
 }
