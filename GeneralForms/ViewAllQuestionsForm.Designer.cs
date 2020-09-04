@@ -209,7 +209,7 @@
             this.TableLayoutForSearchCondtions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.TableLayoutForSearchCondtions.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TableLayoutForSearchCondtions.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TableLayoutForSearchCondtions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.TableLayoutForSearchCondtions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
             this.TableLayoutForSearchCondtions.Size = new System.Drawing.Size(114, 576);
             this.TableLayoutForSearchCondtions.TabIndex = 3;
             // 
@@ -217,9 +217,9 @@
             // 
             this.SearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.SearchButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SearchButton.Location = new System.Drawing.Point(3, 313);
+            this.SearchButton.Location = new System.Drawing.Point(3, 298);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(109, 23);
+            this.SearchButton.Size = new System.Drawing.Size(110, 23);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -234,14 +234,15 @@
             this.tableLayoutPanel9.Controls.Add(this.DifficultyTypeComboBox, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.DifficultySelectLabel, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 166);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 151);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(109, 95);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(110, 95);
             this.tableLayoutPanel9.TabIndex = 6;
+            this.tableLayoutPanel9.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel9_Paint);
             // 
             // DifficultyCheckBox
             // 
@@ -254,9 +255,8 @@
             "3"});
             this.DifficultyCheckBox.Location = new System.Drawing.Point(3, 43);
             this.DifficultyCheckBox.Name = "DifficultyCheckBox";
-            this.DifficultyCheckBox.Size = new System.Drawing.Size(103, 49);
+            this.DifficultyCheckBox.Size = new System.Drawing.Size(104, 49);
             this.DifficultyCheckBox.TabIndex = 1;
-            this.DifficultyCheckBox.SelectedIndexChanged += new System.EventHandler(this.checkedListBox3_SelectedIndexChanged);
             // 
             // DifficultyTypeComboBox
             // 
@@ -268,8 +268,9 @@
             "Machine Generated Difficulty Setting"});
             this.DifficultyTypeComboBox.Location = new System.Drawing.Point(3, 16);
             this.DifficultyTypeComboBox.Name = "DifficultyTypeComboBox";
-            this.DifficultyTypeComboBox.Size = new System.Drawing.Size(103, 21);
+            this.DifficultyTypeComboBox.Size = new System.Drawing.Size(104, 21);
             this.DifficultyTypeComboBox.TabIndex = 0;
+            this.DifficultyTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.DifficultyTypeComboBox_SelectedIndexChanged);
             // 
             // DifficultySelectLabel
             // 
@@ -289,12 +290,12 @@
             this.tableLayoutPanel8.Controls.Add(this.AreaCheckedListBox, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.AreaLabel, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 107);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 92);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(109, 53);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(110, 53);
             this.tableLayoutPanel8.TabIndex = 5;
             // 
             // AreaCheckedListBox
@@ -307,7 +308,7 @@
             "Calculations"});
             this.AreaCheckedListBox.Location = new System.Drawing.Point(3, 16);
             this.AreaCheckedListBox.Name = "AreaCheckedListBox";
-            this.AreaCheckedListBox.Size = new System.Drawing.Size(103, 34);
+            this.AreaCheckedListBox.Size = new System.Drawing.Size(104, 34);
             this.AreaCheckedListBox.TabIndex = 0;
             // 
             // AreaLabel
@@ -317,7 +318,7 @@
             this.AreaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AreaLabel.Location = new System.Drawing.Point(3, 0);
             this.AreaLabel.Name = "AreaLabel";
-            this.AreaLabel.Size = new System.Drawing.Size(103, 13);
+            this.AreaLabel.Size = new System.Drawing.Size(104, 13);
             this.AreaLabel.TabIndex = 7;
             this.AreaLabel.Text = "Area";
             // 
@@ -334,7 +335,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(109, 98);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(110, 83);
             this.tableLayoutPanel7.TabIndex = 4;
             // 
             // TopicCheckedListBox
@@ -350,7 +351,7 @@
             "Electricity"});
             this.TopicCheckedListBox.Location = new System.Drawing.Point(3, 16);
             this.TopicCheckedListBox.Name = "TopicCheckedListBox";
-            this.TopicCheckedListBox.Size = new System.Drawing.Size(103, 79);
+            this.TopicCheckedListBox.Size = new System.Drawing.Size(104, 64);
             this.TopicCheckedListBox.TabIndex = 0;
             // 
             // TopicLabel
@@ -360,7 +361,7 @@
             this.TopicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TopicLabel.Location = new System.Drawing.Point(3, 0);
             this.TopicLabel.Name = "TopicLabel";
-            this.TopicLabel.Size = new System.Drawing.Size(103, 13);
+            this.TopicLabel.Size = new System.Drawing.Size(104, 13);
             this.TopicLabel.TabIndex = 7;
             this.TopicLabel.Text = "Topic";
             // 
@@ -368,16 +369,16 @@
             // 
             this.SearchBarTextBox.AcceptsTab = true;
             this.SearchBarTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SearchBarTextBox.Location = new System.Drawing.Point(3, 287);
+            this.SearchBarTextBox.Location = new System.Drawing.Point(3, 272);
             this.SearchBarTextBox.Name = "SearchBarTextBox";
-            this.SearchBarTextBox.Size = new System.Drawing.Size(109, 20);
+            this.SearchBarTextBox.Size = new System.Drawing.Size(110, 20);
             this.SearchBarTextBox.TabIndex = 0;
             // 
             // FilterResultsLabel
             // 
             this.FilterResultsLabel.AutoSize = true;
             this.FilterResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FilterResultsLabel.Location = new System.Drawing.Point(3, 264);
+            this.FilterResultsLabel.Location = new System.Drawing.Point(3, 249);
             this.FilterResultsLabel.Name = "FilterResultsLabel";
             this.FilterResultsLabel.Size = new System.Drawing.Size(67, 13);
             this.FilterResultsLabel.TabIndex = 9;

@@ -10,22 +10,51 @@ namespace PhysicsQuiz1._0.Classes
 {
     public class QuestionClass
     {
-        //Test
-        public List<StoredQuestions> GetQuestionsExistingDifficulty(string search, int topic1, int topic2, int topic3, int topic4, int topic5, int difficulty, int difficulty2, int difficulty3, int area, int area2)
+        public List<StoredQuestions> GetQuestionsForSearch(SearchCriteria sc, bool Type)
         {
-            if (search == "")
+            List<StoredQuestions> questions = new List<StoredQuestions>();
+            if (sc.Search == "")
             {
-                search = "%";
+                sc.Search = "%";
             }
             else
             {
-                search = "%" + search + "%";
+                sc.Search = "%" + sc.Search + "%";
             }
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
             {
-                var parameters = new { Search = search, Topic1 = topic1, Topic2 = topic2, Topic3 = topic3, Topic4 = topic4, Topic5 = topic5, Difficulty = difficulty, Difficulty2 = difficulty2, Difficulty3 = difficulty3, Area = area, Area2 = area2};
-                var questions = connection.Query<StoredQuestions>("exec dbo.spStoredQuestions_SearchQuestionsStoredDiff @Search, @Topic1, @Topic2, @Topic3, @Topic4, @Topic5, @Difficulty, @Difficulty2, @Difficulty3, @Area, @Area2", parameters).ToList();
-                return questions;
+                if (Type == false)
+                {
+                    var parameters = new { Search = sc.Search, Topic1 = sc.Topic1, Topic2 = sc.Topic2, Topic3 = sc.Topic3, Topic4 = sc.Topic4, Topic5 = sc.Topic5, Difficulty = sc.Difficulty, Difficulty2 = sc.Difficulty1, Difficulty3 = sc.Difficulty2, Area = sc.Area, Area2 = sc.Area1 };
+                    questions = connection.Query<StoredQuestions>("exec dbo.spStoredQuestions_SearchQuestionsStoredDiff @Search, @Topic1, @Topic2, @Topic3, @Topic4, @Topic5, @Difficulty, @Difficulty2, @Difficulty3, @Area, @Area2", parameters).ToList();
+                    return questions;
+                }
+                else
+                {
+                    var parameters = new { Search = sc.Search, Topic1 = sc.Topic1, Topic2 = sc.Topic2, Topic3 = sc.Topic3, Topic4 = sc.Topic4, Topic5 = sc.Topic5, Area = sc.Area, Area2 = sc.Area1 };
+                    if(sc.Difficulty == 1)
+                    {
+                        var q = connection.Query<StoredQuestions>("exec dbo.spStoredQuestions_SearchQuestionsGenDiff1 @Search, @Topic1, @Topic2, @Topic3, @Topic4, @Topic5, @Area, @Area2", parameters).ToList();
+                        questions.AddRange(q);
+                    }
+                    if (sc.Difficulty1 == 2)
+                    {
+                        var q = connection.Query<StoredQuestions>("exec dbo.spStoredQuestions_SearchQuestionsGenDiff2 @Search, @Topic1, @Topic2, @Topic3, @Topic4, @Topic5, @Area, @Area2", parameters).ToList();
+                        questions.AddRange(q);
+                    }
+                    if (sc.Difficulty2 == 3)
+                    {
+                        var q = connection.Query<StoredQuestions>("exec dbo.spStoredQuestions_SearchQuestionsGenDiff3 @Search, @Topic1, @Topic2, @Topic3, @Topic4, @Topic5, @Area, @Area2", parameters).ToList();
+                        questions.AddRange(q);
+                    }
+                    if (sc.Difficulty3 == 4)
+                    {
+                        var q = connection.Query<StoredQuestions>("exec dbo.spStoredQuestions_SearchQuestionsGenDiff4 @Search, @Topic1, @Topic2, @Topic3, @Topic4, @Topic5, @Area, @Area2", parameters).ToList();
+                        questions.AddRange(q);
+                    }
+
+                    return questions;
+                }
             }
         }
 

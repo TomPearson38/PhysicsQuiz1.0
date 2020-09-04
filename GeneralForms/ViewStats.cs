@@ -154,13 +154,6 @@ namespace PhysicsQuiz1._0.GeneralForms
                 this.Show();
             };
 
-            SQF.ResetQuestion += (source, EventArgs) =>
-            {
-                NewViewStats(null, Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, null);
-                StudyButton_Click(this, EventArgs.Empty);
-                this.Hide();
-            };
-
         }
 
         private void NewViewStats(StartQuizForm SQF, StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions, List<CompletedQuestion> cq)

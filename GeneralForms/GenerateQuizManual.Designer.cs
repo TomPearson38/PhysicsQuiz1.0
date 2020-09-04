@@ -422,6 +422,7 @@
             this.DifficultyTypeComboBox.Name = "DifficultyTypeComboBox";
             this.DifficultyTypeComboBox.Size = new System.Drawing.Size(103, 21);
             this.DifficultyTypeComboBox.TabIndex = 0;
+            this.DifficultyTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.DifficultyTypeComboBox_SelectedIndexChanged_1);
             // 
             // DifficultySelectLabel
             // 

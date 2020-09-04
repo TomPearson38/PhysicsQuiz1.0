@@ -14,6 +14,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 {
     public partial class GenerateQuizManual : Form
     {
+        int selectedmode = 0;
 
         List<StoredQuestions> questions = new List<StoredQuestions>();
         List<StoredQuestions> AllQuestions = new List<StoredQuestions>();
@@ -31,6 +32,7 @@ namespace PhysicsQuiz1._0.GeneralForms
             QuestionListBox.DisplayMember = "DisplayItem";
             QuestionHeaderLabel.Hide();
             AnswerHeaderLabel.Hide();
+            DifficultyCheckBox.Hide();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -73,104 +75,144 @@ namespace PhysicsQuiz1._0.GeneralForms
         private void SearchButton_Click_1(object sender, EventArgs e)
         {
             QuestionClass qc = new QuestionClass();
-            string search = SearchBarTextBox.Text;
-            int Difficulty = 0;
-            int Difficulty1 = 0;
-            int Difficulty2 = 0;
-            int Area = 0;
-            int Area1 = 0;
-            int Topic1 = 0;
-            int Topic2 = 0;
-            int Topic3 = 0;
-            int Topic4 = 0;
-            int Topic5 = 0;
+            SearchCriteria sc = new SearchCriteria();
 
-            if ((DifficultyCheckBox.CheckedItems.Count == 3) || (DifficultyCheckBox.CheckedItems.Count == 0))
-            {
-                Difficulty = 1;
-                Difficulty1 = 2;
-                Difficulty2 = 3;
-            }
-            else
-            {
-                if (DifficultyCheckBox.CheckedItems.Contains("1"))
-                {
-                    Difficulty = 1;
-                }
-
-                if (DifficultyCheckBox.CheckedItems.Contains("2"))
-                {
-                    Difficulty1 = 2;
-                }
-
-                if (DifficultyCheckBox.CheckedItems.Contains("3"))
-                {
-                    Difficulty2 = 3;
-                }
-            }
+            sc.Search = SearchBarTextBox.Text;
 
             if ((TopicCheckedListBox.CheckedItems.Count == 0) || (TopicCheckedListBox.CheckedItems.Count == 5))
             {
-                Topic1 = 1;
-                Topic2 = 2;
-                Topic3 = 3;
-                Topic4 = 4;
-                Topic5 = 5;
+                sc.Topic1 = 1;
+                sc.Topic2 = 2;
+                sc.Topic3 = 3;
+                sc.Topic4 = 4;
+                sc.Topic5 = 5;
             }
             else
             {
                 if (TopicCheckedListBox.CheckedItems.Contains("Particles"))
                 {
-                    Topic1 = 1;
+                    sc.Topic1 = 1;
                 }
 
                 if (TopicCheckedListBox.CheckedItems.Contains("Waves"))
                 {
-                    Topic2 = 2;
+                    sc.Topic2 = 2;
                 }
 
                 if (TopicCheckedListBox.CheckedItems.Contains("Mechanics"))
                 {
-                    Topic3 = 3;
+                    sc.Topic3 = 3;
                 }
 
 
                 if (TopicCheckedListBox.CheckedItems.Contains("Materials"))
                 {
-                    Topic4 = 4;
+                    sc.Topic4 = 4;
                 }
 
 
                 if (TopicCheckedListBox.CheckedItems.Contains("Electricity"))
                 {
-                    Topic5 = 5;
+                    sc.Topic5 = 5;
                 }
-
             }
 
             if (AreaCheckedListBox.CheckedItems.Count == 0 || AreaCheckedListBox.CheckedItems.Count == 2)
             {
-                Area = 1;
-                Area1 = 2;
+                sc.Area = 1;
+                sc.Area1 = 2;
             }
             else
             {
                 if (AreaCheckedListBox.CheckedItems.Contains("Recall"))
                 {
-                    Area = 1;
-                    Area1 = 1;
+                    sc.Area = 1;
+                    sc.Area1 = 1;
                 }
                 else
                 {
-                    Area = 2;
-                    Area1 = 2;
+                    sc.Area = 2;
+                    sc.Area1 = 2;
                 }
             }
 
-            questions = qc.GetQuestionsExistingDifficulty(search, Topic1, Topic2, Topic3, Topic4, Topic5, Difficulty, Difficulty1, Difficulty2, Area, Area1);
+            if (selectedmode == 2)
+            {
+                sc = GeneratedDifficulty(sc);
+                questions = qc.GetQuestionsForSearch(sc, true);
+            }
+            else
+            {
+                sc = PredefDifficultySearch(sc);
+                questions = qc.GetQuestionsForSearch(sc, false);
+            }
+
+
             QuestionListBox.DataSource = questions;
             QuestionListBox.DisplayMember = "DisplayItem";
         }
+
+        private SearchCriteria PredefDifficultySearch(SearchCriteria sc)
+        {
+            if ((DifficultyCheckBox.CheckedItems.Count == 3) || (DifficultyCheckBox.CheckedItems.Count == 0))
+            {
+                sc.Difficulty = 1;
+                sc.Difficulty1 = 2;
+                sc.Difficulty2 = 3;
+            }
+            else
+            {
+                if (DifficultyCheckBox.CheckedItems.Contains("1"))
+                {
+                    sc.Difficulty = 1;
+                }
+
+                if (DifficultyCheckBox.CheckedItems.Contains("2"))
+                {
+                    sc.Difficulty1 = 2;
+                }
+
+                if (DifficultyCheckBox.CheckedItems.Contains("3"))
+                {
+                    sc.Difficulty2 = 3;
+                }
+            }
+
+            return sc;
+        }
+
+        private SearchCriteria GeneratedDifficulty(SearchCriteria sc)
+        {
+            if (DifficultyCheckBox.CheckedItems.Count == 4 || DifficultyCheckBox.CheckedItems.Count == 0)
+            {
+                sc.Difficulty = 1;
+                sc.Difficulty1 = 2;
+                sc.Difficulty2 = 3;
+                sc.Difficulty3 = 4;
+            }
+            else
+            {
+                if (DifficultyCheckBox.CheckedIndices.Contains(0))
+                {
+                    sc.Difficulty = 1;
+                }
+                if (DifficultyCheckBox.CheckedItems.Contains(1))
+                {
+                    sc.Difficulty1 = 2;
+                }
+                if (DifficultyCheckBox.CheckedItems.Contains(2))
+                {
+                    sc.Difficulty2 = 3;
+                }
+                if (DifficultyCheckBox.CheckedItems.Contains(3))
+                {
+                    sc.Difficulty3 = 4;
+                }
+            }
+
+            return sc;
+        }
+
 
         private void AddButton_Click(object sender, EventArgs e)
         {
@@ -278,6 +320,35 @@ namespace PhysicsQuiz1._0.GeneralForms
                 ReturnToMenuButton_Click(this, EventArgs.Empty);
             }
             base.OnFormClosed(e);
+        }
+
+        private void DifficultyTypeComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            DifficultyCheckBox.Show();
+            if (DifficultyTypeComboBox.SelectedItem.ToString() == "Pre-defined Difficulty Setting")
+            {
+                selectedmode = 1;
+                DifficultyCheckBox.Items.Clear();
+                DifficultyCheckBox.Items.Add("1");
+                DifficultyCheckBox.Items.Add("2");
+                DifficultyCheckBox.Items.Add("3");
+                DifficultyCheckBox.Height = 49;
+            }
+            else if (DifficultyTypeComboBox.SelectedItem.ToString() == "Machine Generated Difficulty Setting")
+            {
+                selectedmode = 2;
+                DifficultyCheckBox.Items.Clear();
+                DifficultyCheckBox.Items.Add("Advanced");
+                DifficultyCheckBox.Items.Add("Hard");
+                DifficultyCheckBox.Items.Add("Average");
+                DifficultyCheckBox.Items.Add("Easy");
+                DifficultyCheckBox.Height = 64;
+            }
+            else
+            {
+                selectedmode = 0;
+                DifficultyCheckBox.Hide();
+            }
         }
     }
 }
