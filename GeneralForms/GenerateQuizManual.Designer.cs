@@ -102,7 +102,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1029, 694);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1179, 696);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // tableLayoutPanel6
@@ -113,12 +113,12 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel11, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.CreateQuizButton, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(689, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(789, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(337, 100);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(387, 100);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
             // tableLayoutPanel11
@@ -129,12 +129,12 @@
             this.tableLayoutPanel11.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.QuizNameTextBox, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(77, 3);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(87, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(257, 94);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(297, 94);
             this.tableLayoutPanel11.TabIndex = 5;
             // 
             // label1
@@ -142,7 +142,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 22);
+            this.label1.Location = new System.Drawing.Point(53, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 25);
             this.label1.TabIndex = 0;
@@ -153,7 +153,7 @@
             this.QuizNameTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.QuizNameTextBox.Location = new System.Drawing.Point(3, 50);
             this.QuizNameTextBox.Name = "QuizNameTextBox";
-            this.QuizNameTextBox.Size = new System.Drawing.Size(251, 20);
+            this.QuizNameTextBox.Size = new System.Drawing.Size(291, 20);
             this.QuizNameTextBox.TabIndex = 1;
             // 
             // CreateQuizButton
@@ -161,7 +161,7 @@
             this.CreateQuizButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.CreateQuizButton.Location = new System.Drawing.Point(3, 3);
             this.CreateQuizButton.Name = "CreateQuizButton";
-            this.CreateQuizButton.Size = new System.Drawing.Size(68, 94);
+            this.CreateQuizButton.Size = new System.Drawing.Size(78, 93);
             this.CreateQuizButton.TabIndex = 4;
             this.CreateQuizButton.Text = "Create Quiz";
             this.CreateQuizButton.UseVisualStyleBackColor = true;
@@ -180,8 +180,8 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(680, 100);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(780, 100);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // ReturnToMenuButton
@@ -199,7 +199,7 @@
             // 
             this.MenuInformationButton.AutoSize = true;
             this.MenuInformationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuInformationButton.Location = new System.Drawing.Point(192, 0);
+            this.MenuInformationButton.Location = new System.Drawing.Point(220, 0);
             this.MenuInformationButton.Name = "MenuInformationButton";
             this.MenuInformationButton.Size = new System.Drawing.Size(479, 48);
             this.MenuInformationButton.TabIndex = 1;
@@ -222,7 +222,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 582F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 582);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 582);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -254,7 +254,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(308, 401);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(409, 401);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -325,7 +325,7 @@
             this.QuestionPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QuestionPictureBox.Location = new System.Drawing.Point(3, 3);
             this.QuestionPictureBox.Name = "QuestionPictureBox";
-            this.QuestionPictureBox.Size = new System.Drawing.Size(302, 99);
+            this.QuestionPictureBox.Size = new System.Drawing.Size(403, 99);
             this.QuestionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.QuestionPictureBox.TabIndex = 0;
             this.QuestionPictureBox.TabStop = false;
@@ -335,7 +335,7 @@
             this.AddButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.AddButton.Location = new System.Drawing.Point(3, 354);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(302, 20);
+            this.AddButton.Size = new System.Drawing.Size(403, 20);
             this.AddButton.TabIndex = 12;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
@@ -370,9 +370,9 @@
             // 
             this.SearchButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.SearchButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SearchButton.Location = new System.Drawing.Point(3, 313);
+            this.SearchButton.Location = new System.Drawing.Point(3, 268);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(109, 23);
+            this.SearchButton.Size = new System.Drawing.Size(110, 23);
             this.SearchButton.TabIndex = 1;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -387,13 +387,13 @@
             this.tableLayoutPanel9.Controls.Add(this.DifficultyTypeComboBox, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.DifficultySelectLabel, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 166);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 136);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 3;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(109, 95);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(110, 80);
             this.tableLayoutPanel9.TabIndex = 6;
             // 
             // DifficultyCheckBox
@@ -407,7 +407,7 @@
             "3"});
             this.DifficultyCheckBox.Location = new System.Drawing.Point(3, 43);
             this.DifficultyCheckBox.Name = "DifficultyCheckBox";
-            this.DifficultyCheckBox.Size = new System.Drawing.Size(103, 49);
+            this.DifficultyCheckBox.Size = new System.Drawing.Size(104, 34);
             this.DifficultyCheckBox.TabIndex = 1;
             // 
             // DifficultyTypeComboBox
@@ -420,7 +420,7 @@
             "Machine Generated Difficulty Setting"});
             this.DifficultyTypeComboBox.Location = new System.Drawing.Point(3, 16);
             this.DifficultyTypeComboBox.Name = "DifficultyTypeComboBox";
-            this.DifficultyTypeComboBox.Size = new System.Drawing.Size(103, 21);
+            this.DifficultyTypeComboBox.Size = new System.Drawing.Size(104, 21);
             this.DifficultyTypeComboBox.TabIndex = 0;
             this.DifficultyTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.DifficultyTypeComboBox_SelectedIndexChanged_1);
             // 
@@ -442,12 +442,12 @@
             this.tableLayoutPanel8.Controls.Add(this.AreaCheckedListBox, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.AreaLabel, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 107);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 92);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(109, 53);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(110, 38);
             this.tableLayoutPanel8.TabIndex = 5;
             // 
             // AreaCheckedListBox
@@ -460,7 +460,7 @@
             "Calculations"});
             this.AreaCheckedListBox.Location = new System.Drawing.Point(3, 16);
             this.AreaCheckedListBox.Name = "AreaCheckedListBox";
-            this.AreaCheckedListBox.Size = new System.Drawing.Size(103, 34);
+            this.AreaCheckedListBox.Size = new System.Drawing.Size(104, 19);
             this.AreaCheckedListBox.TabIndex = 0;
             // 
             // AreaLabel
@@ -470,7 +470,7 @@
             this.AreaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AreaLabel.Location = new System.Drawing.Point(3, 0);
             this.AreaLabel.Name = "AreaLabel";
-            this.AreaLabel.Size = new System.Drawing.Size(103, 13);
+            this.AreaLabel.Size = new System.Drawing.Size(104, 13);
             this.AreaLabel.TabIndex = 7;
             this.AreaLabel.Text = "Area";
             // 
@@ -487,7 +487,7 @@
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(109, 98);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(110, 83);
             this.tableLayoutPanel7.TabIndex = 4;
             // 
             // TopicCheckedListBox
@@ -503,7 +503,7 @@
             "Electricity"});
             this.TopicCheckedListBox.Location = new System.Drawing.Point(3, 16);
             this.TopicCheckedListBox.Name = "TopicCheckedListBox";
-            this.TopicCheckedListBox.Size = new System.Drawing.Size(103, 79);
+            this.TopicCheckedListBox.Size = new System.Drawing.Size(104, 64);
             this.TopicCheckedListBox.TabIndex = 0;
             // 
             // TopicLabel
@@ -513,7 +513,7 @@
             this.TopicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TopicLabel.Location = new System.Drawing.Point(3, 0);
             this.TopicLabel.Name = "TopicLabel";
-            this.TopicLabel.Size = new System.Drawing.Size(103, 13);
+            this.TopicLabel.Size = new System.Drawing.Size(104, 13);
             this.TopicLabel.TabIndex = 7;
             this.TopicLabel.Text = "Topic";
             // 
@@ -521,16 +521,16 @@
             // 
             this.SearchBarTextBox.AcceptsTab = true;
             this.SearchBarTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SearchBarTextBox.Location = new System.Drawing.Point(3, 287);
+            this.SearchBarTextBox.Location = new System.Drawing.Point(3, 242);
             this.SearchBarTextBox.Name = "SearchBarTextBox";
-            this.SearchBarTextBox.Size = new System.Drawing.Size(109, 20);
+            this.SearchBarTextBox.Size = new System.Drawing.Size(110, 20);
             this.SearchBarTextBox.TabIndex = 0;
             // 
             // FilterResultsLabel
             // 
             this.FilterResultsLabel.AutoSize = true;
             this.FilterResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FilterResultsLabel.Location = new System.Drawing.Point(3, 264);
+            this.FilterResultsLabel.Location = new System.Drawing.Point(3, 219);
             this.FilterResultsLabel.Name = "FilterResultsLabel";
             this.FilterResultsLabel.Size = new System.Drawing.Size(67, 13);
             this.FilterResultsLabel.TabIndex = 9;
@@ -544,13 +544,13 @@
             this.tableLayoutPanel10.Controls.Add(this.CurrentQuizQuestionsLabel, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.toolStrip1, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(689, 109);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(789, 109);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 3;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.37113F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.62887F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(337, 582);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(387, 584);
             this.tableLayoutPanel10.TabIndex = 6;
             // 
             // QuizListBox
@@ -562,7 +562,7 @@
             this.QuizListBox.HorizontalScrollbar = true;
             this.QuizListBox.Location = new System.Drawing.Point(3, 92);
             this.QuizListBox.Name = "QuizListBox";
-            this.QuizListBox.Size = new System.Drawing.Size(331, 485);
+            this.QuizListBox.Size = new System.Drawing.Size(381, 485);
             this.QuizListBox.TabIndex = 4;
             // 
             // CurrentQuizQuestionsLabel
@@ -577,6 +577,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RemoveLabel,
             this.RemoveButton,
@@ -585,7 +586,7 @@
             this.QuestionCapacityProgressBar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 69);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(337, 20);
+            this.toolStrip1.Size = new System.Drawing.Size(387, 20);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -603,7 +604,7 @@
             this.RemoveButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveButton.Image")));
             this.RemoveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(23, 17);
+            this.RemoveButton.Size = new System.Drawing.Size(24, 17);
             this.RemoveButton.Text = "toolStripButton1";
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -622,7 +623,7 @@
             // 
             this.QuestionCapacityProgressBar.Maximum = 15;
             this.QuestionCapacityProgressBar.Name = "QuestionCapacityProgressBar";
-            this.QuestionCapacityProgressBar.Size = new System.Drawing.Size(100, 17);
+            this.QuestionCapacityProgressBar.Size = new System.Drawing.Size(75, 17);
             this.QuestionCapacityProgressBar.Click += new System.EventHandler(this.QuestionCapacityProgressBar_Click);
             // 
             // GenerateQuizManual

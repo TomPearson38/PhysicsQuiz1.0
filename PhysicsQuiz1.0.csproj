@@ -53,6 +53,7 @@
     <Compile Include="Classes\CalculateDifficulty.cs" />
     <Compile Include="Classes\CompletedQuestion.cs" />
     <Compile Include="Classes\CompletedQuiz.cs" />
+    <Compile Include="Classes\CreateHTMLTable.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\QuestionClass.cs" />
@@ -68,6 +69,12 @@
     </Compile>
     <Compile Include="GeneralForms\GenerateQuizManual.Designer.cs">
       <DependentUpon>GenerateQuizManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralForms\SendQuizInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForms\SendQuizInfo.Designer.cs">
+      <DependentUpon>SendQuizInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneralForms\ViewAllQuestionsForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +126,12 @@
     <Compile Include="QuizForms\StartQuizForm.Designer.cs">
       <DependentUpon>StartQuizForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentForms\AutoCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentForms\AutoCreateForm.Designer.cs">
+      <DependentUpon>AutoCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentForms\PictureQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="GeneralForms\GenerateQuizManual.resx">
       <DependentUpon>GenerateQuizManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForms\SendQuizInfo.resx">
+      <DependentUpon>SendQuizInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralForms\ViewAllQuestionsForm.resx">
       <DependentUpon>ViewAllQuestionsForm.cs</DependentUpon>
@@ -178,6 +194,9 @@
     </Compile>
     <EmbeddedResource Include="QuizForms\StartQuizForm.resx">
       <DependentUpon>StartQuizForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentForms\AutoCreateForm.resx">
+      <DependentUpon>AutoCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentForms\PictureQuestionForm.resx">
       <DependentUpon>PictureQuestionForm.cs</DependentUpon>

@@ -1,9 +1,6 @@
 ﻿using Dapper;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
 
 namespace PhysicsQuiz1._0.Classes
@@ -171,8 +168,11 @@ namespace PhysicsQuiz1._0.Classes
             byte[] hash = sha256hashstring.ComputeHash(bytes);
 
             StringBuilder hex = new StringBuilder(hash.Length * 2);
+
             foreach (byte b in hash)
+            {
                 hex.AppendFormat("{0:x2}", b);
+            }
             return hex.ToString();
         }
 

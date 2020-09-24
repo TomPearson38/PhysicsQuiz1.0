@@ -213,7 +213,6 @@ namespace PhysicsQuiz1._0.GeneralForms
             return sc;
         }
 
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             if (QuestionListBox.SelectedItem == null)

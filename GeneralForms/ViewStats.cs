@@ -41,7 +41,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             if (cquestion == null)
             {
-                StudentInputNameLabel.Text = ($"{student.FistName} {student.SecondName}");
+                StudentInputNameLabel.Text = ($"{student.FirstName} {student.SecondName}");
 
                 InputClassIdLabel.Text = student.ClassId.ToString();
 
@@ -69,7 +69,15 @@ namespace PhysicsQuiz1._0.GeneralForms
             foreach (StoredQuestions sq in storedQuestions)
             {
                 ListViewItem b = new ListViewItem(sq.Question);
-                b.SubItems.Add(sq.Area.ToString());
+                if (sq.Area == 1)
+                {
+                    b.SubItems.Add("Recall");
+                }
+                else
+                {
+                    b.SubItems.Add("Calculations");
+                }
+
                 if (sq.TopicId == 1)
                 {
                     b.SubItems.Add("Particles");
@@ -136,7 +144,16 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void GenerateReportButton_Click(object sender, EventArgs e)
         {
+            SendQuizInfo SQI = new SendQuizInfo(Student, ListOfStoredQuestions, completedQuestion, SelectedQuiz);
 
+            this.Hide();
+
+            SQI.Show();
+
+            SQI.FormClosed += (source, EventArgs) =>
+            {
+                this.Show();
+            };
         }
 
         private void StudyButton_Click(object sender, EventArgs e)
@@ -193,6 +210,11 @@ namespace PhysicsQuiz1._0.GeneralForms
             listView1.Refresh();
 
             setup(Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, null);
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

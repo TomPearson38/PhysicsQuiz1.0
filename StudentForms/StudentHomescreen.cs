@@ -21,7 +21,7 @@ namespace PhysicsQuiz1._0.StudentForms
         {
             InitializeComponent();
             student = user;
-            WelcomeLabel.Text = $"Welcome {user.FistName}, Please Select A Mode.";
+            WelcomeLabel.Text = $"Welcome {user.FirstName}, Please Select A Mode.";
         }
 
         private void WelcomeLabel_Click(object sender, EventArgs e)
@@ -102,5 +102,15 @@ namespace PhysicsQuiz1._0.StudentForms
             };
         }
 
+        private void GenerateNewQuizAutoButton_Click(object sender, EventArgs e)
+        {
+            AutoCreateForm ACF = new AutoCreateForm();
+            this.Hide();
+            ACF.Show();
+            ACF.ClosedPage += (source, EventArgs) =>
+            {
+                this.Show();
+            };
+        }
     }
 }
