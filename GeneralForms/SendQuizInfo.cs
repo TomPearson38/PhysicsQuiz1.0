@@ -12,6 +12,8 @@ namespace PhysicsQuiz1._0.GeneralForms
         List<StoredQuestions> SQ = new List<StoredQuestions>();
         List<CompletedQuestion> CQ = new List<CompletedQuestion>();
         CreateHTMLTable createemail = new CreateHTMLTable();
+        StoredQuizzes storedquizzes = new StoredQuizzes();
+        DataAccess DA = new DataAccess();
 
 
         public SendQuizInfo(StudentLogin student, List<StoredQuestions> sq, List<CompletedQuestion> cq, StoredQuizzes storedQuizzes)
@@ -20,6 +22,13 @@ namespace PhysicsQuiz1._0.GeneralForms
             Student = student;
             SQ = sq;
             CQ = cq;
+            storedquizzes = storedQuizzes;
+        }
+
+        private void SendQuizScoresButton_Click(object sender, System.EventArgs e)
+        {
+            string teacheremail = DA.GetTeacherEmail(Student.ClassId);
+
 
             SmtpClient clientDetails = new SmtpClient();
             clientDetails.Port = 587;
@@ -28,16 +37,22 @@ namespace PhysicsQuiz1._0.GeneralForms
             clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
             clientDetails.UseDefaultCredentials = false;
             clientDetails.Credentials = new NetworkCredential("physicsquizemailsend@gmail.com", "M!necraft1");
+
             MailMessage mailDetails = new MailMessage();
             mailDetails.From = new MailAddress("physicsquizemailsend@gmail.com");
-            mailDetails.To.Add("tomapearson38@gmail.com");
-            mailDetails.Subject = student.FirstName + " " + student.SecondName + "`s Scores for Test Named:" + storedQuizzes.Name;
+            mailDetails.To.Add(teacheremail);
+            mailDetails.Subject = Student.FirstName + " " + Student.SecondName + "`s Scores for Test Named:" + storedquizzes.Name;
             mailDetails.IsBodyHtml = true;
-            mailDetails.Body = createemail.createtable(Student, SQ, CQ);
-            mailDetails.IsBodyHtml = true;
+            mailDetails.Body = createemail.createtable(SQ, CQ);
+
             clientDetails.Send(mailDetails);
+
             MessageBox.Show("Your mail has been sent.");
         }
 
+        private void ReturnButton_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

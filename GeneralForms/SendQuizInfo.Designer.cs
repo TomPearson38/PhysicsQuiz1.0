@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.SendQuizScoresButton = new System.Windows.Forms.Button();
+            this.ReturnButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SendQuizScoresButton
@@ -39,12 +40,24 @@
             this.SendQuizScoresButton.TabIndex = 0;
             this.SendQuizScoresButton.Text = "Send Quiz Scores";
             this.SendQuizScoresButton.UseVisualStyleBackColor = true;
+            this.SendQuizScoresButton.Click += new System.EventHandler(this.SendQuizScoresButton_Click);
+            // 
+            // ReturnButton
+            // 
+            this.ReturnButton.Location = new System.Drawing.Point(13, 15);
+            this.ReturnButton.Name = "ReturnButton";
+            this.ReturnButton.Size = new System.Drawing.Size(84, 48);
+            this.ReturnButton.TabIndex = 1;
+            this.ReturnButton.Text = "Return";
+            this.ReturnButton.UseVisualStyleBackColor = true;
+            this.ReturnButton.Click += new System.EventHandler(this.ReturnButton_Click);
             // 
             // SendQuizInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ReturnButton);
             this.Controls.Add(this.SendQuizScoresButton);
             this.Name = "SendQuizInfo";
             this.Text = "SendEmail";
@@ -55,5 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Button SendQuizScoresButton;
+        private System.Windows.Forms.Button ReturnButton;
     }
 }

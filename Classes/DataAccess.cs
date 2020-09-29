@@ -220,7 +220,16 @@ namespace PhysicsQuiz1._0.Classes
                     {
                         return null;
                     }
+                }
             }
+        }
+
+        public string GetTeacherEmail(int ClassID)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("Physicsdb")))
+            {
+                string email = connection.QuerySingle<string>("USE Physicsdb; execute dbo.spTeacherLogin_GetTeacherEmail @classid;", new { classid = ClassID});
+                return email;
             }
         }
     }

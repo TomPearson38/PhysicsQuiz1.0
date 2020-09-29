@@ -8,7 +8,6 @@ namespace PhysicsQuiz1._0.Classes
 {
     public class CreateHTMLTable
     {
-        StudentLogin Student = new StudentLogin();
         List<StoredQuestions> SQ = new List<StoredQuestions>();
         List<CompletedQuestion> CQ = new List<CompletedQuestion>();
 
@@ -18,9 +17,8 @@ namespace PhysicsQuiz1._0.Classes
         int[,] Area = new int[2,2];
         int[,] Topic = new int[5,2];
 
-        public string createtable(StudentLogin student, List<StoredQuestions> sq, List<CompletedQuestion> cq)
+        public string createtable(List<StoredQuestions> sq, List<CompletedQuestion> cq)
         {
-            Student = student;
             SQ = sq;
             CQ = cq;
 
