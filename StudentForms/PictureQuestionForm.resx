@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="QuestionLabel.Text" xml:space="preserve">
-    <value>Two wires, P and Q, have the same original length. They are stretched so that they have the same extension. The tensile force in P is F and the tensile force in Q is 2F. P has a diameter d and Q has a diameter 2d. P is made from a material of Young Modulus E. What is the Young modulus of the material from which Q is made?</value>
-  </data>
 </root>

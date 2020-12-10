@@ -43,8 +43,6 @@ namespace PhysicsQuiz1._0.LoginScreen
                 UsernameInsertBox.Text = "";
                 PasswordInsertBox.Text = "";
 
-                DisplayHash.Text = user.Password;
-
                 StudentHomescreen StHome = new StudentHomescreen(user);
                 StHome.Show();
                 this.Close();

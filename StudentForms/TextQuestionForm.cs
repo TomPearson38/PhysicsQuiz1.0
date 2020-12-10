@@ -81,6 +81,11 @@ namespace PhysicsQuiz1._0.StudentForms
 
             this.Close();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }

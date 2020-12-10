@@ -47,7 +47,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
                 QuestionClass qc = new QuestionClass();
 
-                CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
+                //CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
 
                 if (CQuiz == null)
                 {

@@ -51,13 +51,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.SubmitButton, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(233, 55);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(311, 68);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(623, 476);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 586);
             this.tableLayoutPanel1.TabIndex = 7;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -71,24 +73,26 @@
             this.tableLayoutPanel2.Controls.Add(this.AnswerRadioButton1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.QuestionLabel, 0, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(106, 256);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(138, 313);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // AnswerRadioButton4
             // 
             this.AnswerRadioButton4.AutoSize = true;
             this.AnswerRadioButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton4.Location = new System.Drawing.Point(3, 193);
+            this.AnswerRadioButton4.Location = new System.Drawing.Point(4, 236);
+            this.AnswerRadioButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton4.Name = "AnswerRadioButton4";
-            this.AnswerRadioButton4.Size = new System.Drawing.Size(100, 60);
+            this.AnswerRadioButton4.Size = new System.Drawing.Size(130, 73);
             this.AnswerRadioButton4.TabIndex = 17;
             this.AnswerRadioButton4.TabStop = true;
             this.AnswerRadioButton4.Text = "D";
@@ -98,9 +102,10 @@
             // 
             this.AnswerRadioButton3.AutoSize = true;
             this.AnswerRadioButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton3.Location = new System.Drawing.Point(3, 139);
+            this.AnswerRadioButton3.Location = new System.Drawing.Point(4, 170);
+            this.AnswerRadioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton3.Name = "AnswerRadioButton3";
-            this.AnswerRadioButton3.Size = new System.Drawing.Size(100, 48);
+            this.AnswerRadioButton3.Size = new System.Drawing.Size(130, 58);
             this.AnswerRadioButton3.TabIndex = 16;
             this.AnswerRadioButton3.TabStop = true;
             this.AnswerRadioButton3.Text = "C";
@@ -110,9 +115,10 @@
             // 
             this.AnswerRadioButton2.AutoSize = true;
             this.AnswerRadioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton2.Location = new System.Drawing.Point(3, 81);
+            this.AnswerRadioButton2.Location = new System.Drawing.Point(4, 99);
+            this.AnswerRadioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton2.Name = "AnswerRadioButton2";
-            this.AnswerRadioButton2.Size = new System.Drawing.Size(100, 52);
+            this.AnswerRadioButton2.Size = new System.Drawing.Size(130, 63);
             this.AnswerRadioButton2.TabIndex = 15;
             this.AnswerRadioButton2.TabStop = true;
             this.AnswerRadioButton2.Text = "B";
@@ -122,9 +128,10 @@
             // 
             this.AnswerRadioButton1.AutoSize = true;
             this.AnswerRadioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton1.Location = new System.Drawing.Point(3, 27);
+            this.AnswerRadioButton1.Location = new System.Drawing.Point(4, 33);
+            this.AnswerRadioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton1.Name = "AnswerRadioButton1";
-            this.AnswerRadioButton1.Size = new System.Drawing.Size(100, 48);
+            this.AnswerRadioButton1.Size = new System.Drawing.Size(130, 58);
             this.AnswerRadioButton1.TabIndex = 13;
             this.AnswerRadioButton1.TabStop = true;
             this.AnswerRadioButton1.Text = "A";
@@ -135,9 +142,10 @@
             this.QuestionLabel.AutoEllipsis = true;
             this.QuestionLabel.AutoSize = true;
             this.QuestionLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.QuestionLabel.Location = new System.Drawing.Point(3, 0);
+            this.QuestionLabel.Location = new System.Drawing.Point(4, 0);
+            this.QuestionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.QuestionLabel.Name = "QuestionLabel";
-            this.QuestionLabel.Size = new System.Drawing.Size(100, 24);
+            this.QuestionLabel.Size = new System.Drawing.Size(130, 29);
             this.QuestionLabel.TabIndex = 18;
             this.QuestionLabel.Text = "#########";
             this.QuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,9 +153,10 @@
             // SubmitButton
             // 
             this.SubmitButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmitButton.Location = new System.Drawing.Point(3, 441);
+            this.SubmitButton.Location = new System.Drawing.Point(4, 543);
+            this.SubmitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(617, 23);
+            this.SubmitButton.Size = new System.Drawing.Size(823, 28);
             this.SubmitButton.TabIndex = 11;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
@@ -155,10 +164,11 @@
             // 
             // TextQuestionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 617);
+            this.ClientSize = new System.Drawing.Size(1456, 759);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TextQuestionForm";
             this.Text = "TextQuestionForm";
             this.tableLayoutPanel1.ResumeLayout(false);

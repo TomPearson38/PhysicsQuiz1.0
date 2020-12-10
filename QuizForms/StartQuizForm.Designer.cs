@@ -39,19 +39,17 @@
             // QuizNameLabel
             // 
             this.QuizNameLabel.AutoSize = true;
-            this.QuizNameLabel.Location = new System.Drawing.Point(557, 43);
-            this.QuizNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.QuizNameLabel.Location = new System.Drawing.Point(418, 35);
             this.QuizNameLabel.Name = "QuizNameLabel";
-            this.QuizNameLabel.Size = new System.Drawing.Size(122, 17);
+            this.QuizNameLabel.Size = new System.Drawing.Size(96, 13);
             this.QuizNameLabel.TabIndex = 0;
             this.QuizNameLabel.Text = "QuizName = ####";
             // 
             // StartQuizButton
             // 
-            this.StartQuizButton.Location = new System.Drawing.Point(482, 232);
-            this.StartQuizButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StartQuizButton.Location = new System.Drawing.Point(362, 188);
             this.StartQuizButton.Name = "StartQuizButton";
-            this.StartQuizButton.Size = new System.Drawing.Size(300, 122);
+            this.StartQuizButton.Size = new System.Drawing.Size(225, 99);
             this.StartQuizButton.TabIndex = 1;
             this.StartQuizButton.Text = "Start Quiz";
             this.StartQuizButton.UseVisualStyleBackColor = true;
@@ -63,19 +61,17 @@
             this.SelectModeComboBox.Items.AddRange(new object[] {
             "Adaptive Questions Order",
             "Default Questions Order"});
-            this.SelectModeComboBox.Location = new System.Drawing.Point(507, 91);
-            this.SelectModeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SelectModeComboBox.Location = new System.Drawing.Point(380, 74);
             this.SelectModeComboBox.Name = "SelectModeComboBox";
-            this.SelectModeComboBox.Size = new System.Drawing.Size(231, 24);
+            this.SelectModeComboBox.Size = new System.Drawing.Size(174, 21);
             this.SelectModeComboBox.TabIndex = 2;
             // 
             // AdaptiveQuestionsLabel
             // 
             this.AdaptiveQuestionsLabel.AutoSize = true;
-            this.AdaptiveQuestionsLabel.Location = new System.Drawing.Point(60, 74);
-            this.AdaptiveQuestionsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AdaptiveQuestionsLabel.Location = new System.Drawing.Point(45, 60);
             this.AdaptiveQuestionsLabel.Name = "AdaptiveQuestionsLabel";
-            this.AdaptiveQuestionsLabel.Size = new System.Drawing.Size(317, 68);
+            this.AdaptiveQuestionsLabel.Size = new System.Drawing.Size(237, 52);
             this.AdaptiveQuestionsLabel.TabIndex = 3;
             this.AdaptiveQuestionsLabel.Text = "Adaptive Question - Using machine learning, the \r\nprogram will present you with t" +
     "he questions you \r\nstruggle with more often than the questions that \r\nyou answer" +
@@ -84,20 +80,18 @@
             // DefaultQuestionsOrderLabel
             // 
             this.DefaultQuestionsOrderLabel.AutoSize = true;
-            this.DefaultQuestionsOrderLabel.Location = new System.Drawing.Point(784, 74);
-            this.DefaultQuestionsOrderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DefaultQuestionsOrderLabel.Location = new System.Drawing.Point(588, 60);
             this.DefaultQuestionsOrderLabel.Name = "DefaultQuestionsOrderLabel";
-            this.DefaultQuestionsOrderLabel.Size = new System.Drawing.Size(299, 68);
+            this.DefaultQuestionsOrderLabel.Size = new System.Drawing.Size(225, 52);
             this.DefaultQuestionsOrderLabel.TabIndex = 4;
             this.DefaultQuestionsOrderLabel.Text = "Default Questions Order -The program will \r\npresent the questions in a randomized" +
     " order\r\nand your ability will not impact which questions\r\nare presented.";
             // 
             // ReturnButton
             // 
-            this.ReturnButton.Location = new System.Drawing.Point(16, 10);
-            this.ReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReturnButton.Location = new System.Drawing.Point(12, 8);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(119, 48);
+            this.ReturnButton.Size = new System.Drawing.Size(89, 39);
             this.ReturnButton.TabIndex = 7;
             this.ReturnButton.Text = "Return";
             this.ReturnButton.UseVisualStyleBackColor = true;
@@ -105,18 +99,16 @@
             // 
             // StartQuizForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 614);
+            this.ClientSize = new System.Drawing.Size(933, 499);
             this.Controls.Add(this.ReturnButton);
             this.Controls.Add(this.DefaultQuestionsOrderLabel);
             this.Controls.Add(this.AdaptiveQuestionsLabel);
             this.Controls.Add(this.SelectModeComboBox);
             this.Controls.Add(this.StartQuizButton);
             this.Controls.Add(this.QuizNameLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StartQuizForm";
-            this.Text = "StartQuizForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

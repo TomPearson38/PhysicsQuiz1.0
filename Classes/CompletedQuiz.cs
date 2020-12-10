@@ -13,4 +13,6 @@ namespace PhysicsQuiz1._0.Classes
         public int Length { get; set; }
         public int QuizId { get; set; }
     }
+
+
 }

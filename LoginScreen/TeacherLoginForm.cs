@@ -34,7 +34,6 @@ namespace PhysicsQuiz1._0.LoginScreen
             else
             {
                 validlogin = true;
-                DisplayUserClass.Text = Teach.Password;
                 UsernameInsertBox.Text = "";
                 PasswordInsertBox.Text = "";
             }

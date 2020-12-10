@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PictureQuestionForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.QuestionPictureBox = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -54,19 +53,21 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.QuestionPictureBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(69, 58);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(92, 71);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(936, 476);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1248, 586);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // QuestionPictureBox
             // 
             this.QuestionPictureBox.Dock = System.Windows.Forms.DockStyle.Right;
-            this.QuestionPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.QuestionPictureBox.Location = new System.Drawing.Point(4, 4);
+            this.QuestionPictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.QuestionPictureBox.Name = "QuestionPictureBox";
-            this.QuestionPictureBox.Size = new System.Drawing.Size(403, 470);
+            this.QuestionPictureBox.Size = new System.Drawing.Size(403, 578);
             this.QuestionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.QuestionPictureBox.TabIndex = 1;
             this.QuestionPictureBox.TabStop = false;
@@ -84,25 +85,27 @@
             this.tableLayoutPanel2.Controls.Add(this.QuestionLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.SubmitButton, 0, 5);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(412, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(415, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(521, 434);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(695, 533);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // AnswerRadioButton4
             // 
             this.AnswerRadioButton4.AutoSize = true;
             this.AnswerRadioButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton4.Location = new System.Drawing.Point(3, 313);
+            this.AnswerRadioButton4.Location = new System.Drawing.Point(4, 384);
+            this.AnswerRadioButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton4.Name = "AnswerRadioButton4";
-            this.AnswerRadioButton4.Size = new System.Drawing.Size(515, 60);
+            this.AnswerRadioButton4.Size = new System.Drawing.Size(687, 73);
             this.AnswerRadioButton4.TabIndex = 17;
             this.AnswerRadioButton4.TabStop = true;
             this.AnswerRadioButton4.Text = "D";
@@ -112,9 +115,10 @@
             // 
             this.AnswerRadioButton3.AutoSize = true;
             this.AnswerRadioButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton3.Location = new System.Drawing.Point(3, 259);
+            this.AnswerRadioButton3.Location = new System.Drawing.Point(4, 318);
+            this.AnswerRadioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton3.Name = "AnswerRadioButton3";
-            this.AnswerRadioButton3.Size = new System.Drawing.Size(515, 48);
+            this.AnswerRadioButton3.Size = new System.Drawing.Size(687, 58);
             this.AnswerRadioButton3.TabIndex = 16;
             this.AnswerRadioButton3.TabStop = true;
             this.AnswerRadioButton3.Text = "C";
@@ -124,9 +128,10 @@
             // 
             this.AnswerRadioButton2.AutoSize = true;
             this.AnswerRadioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton2.Location = new System.Drawing.Point(3, 201);
+            this.AnswerRadioButton2.Location = new System.Drawing.Point(4, 247);
+            this.AnswerRadioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton2.Name = "AnswerRadioButton2";
-            this.AnswerRadioButton2.Size = new System.Drawing.Size(515, 52);
+            this.AnswerRadioButton2.Size = new System.Drawing.Size(687, 63);
             this.AnswerRadioButton2.TabIndex = 15;
             this.AnswerRadioButton2.TabStop = true;
             this.AnswerRadioButton2.Text = "B";
@@ -136,9 +141,10 @@
             // 
             this.AnswerRadioButton1.AutoSize = true;
             this.AnswerRadioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AnswerRadioButton1.Location = new System.Drawing.Point(3, 147);
+            this.AnswerRadioButton1.Location = new System.Drawing.Point(4, 181);
+            this.AnswerRadioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnswerRadioButton1.Name = "AnswerRadioButton1";
-            this.AnswerRadioButton1.Size = new System.Drawing.Size(515, 48);
+            this.AnswerRadioButton1.Size = new System.Drawing.Size(687, 58);
             this.AnswerRadioButton1.TabIndex = 13;
             this.AnswerRadioButton1.TabStop = true;
             this.AnswerRadioButton1.Text = "A";
@@ -148,19 +154,21 @@
             // 
             this.QuestionLabel.AutoEllipsis = true;
             this.QuestionLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.QuestionLabel.Location = new System.Drawing.Point(3, 0);
+            this.QuestionLabel.Location = new System.Drawing.Point(4, 0);
+            this.QuestionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.QuestionLabel.Name = "QuestionLabel";
-            this.QuestionLabel.Size = new System.Drawing.Size(515, 144);
+            this.QuestionLabel.Size = new System.Drawing.Size(687, 177);
             this.QuestionLabel.TabIndex = 18;
-            this.QuestionLabel.Text = resources.GetString("QuestionLabel.Text");
+            this.QuestionLabel.Text = "Question Text";
             this.QuestionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SubmitButton
             // 
             this.SubmitButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SubmitButton.Location = new System.Drawing.Point(151, 379);
+            this.SubmitButton.Location = new System.Drawing.Point(201, 465);
+            this.SubmitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(219, 52);
+            this.SubmitButton.Size = new System.Drawing.Size(292, 64);
             this.SubmitButton.TabIndex = 19;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
@@ -168,11 +176,12 @@
             // 
             // PictureQuestionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1074, 593);
+            this.ClientSize = new System.Drawing.Size(1432, 730);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PictureQuestionForm";
             this.Text = "PictureQuestionForm";
             this.tableLayoutPanel1.ResumeLayout(false);

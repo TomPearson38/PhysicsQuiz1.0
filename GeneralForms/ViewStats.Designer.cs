@@ -64,11 +64,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1344, 459);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1371, 565);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -81,52 +82,57 @@
             this.tableLayoutPanel2.Controls.Add(this.StudentInputNameLabel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.StudentNameLabel, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.89404F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.10596F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(109, 453);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(109, 557);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // InputClassIdLabel
             // 
             this.InputClassIdLabel.AutoSize = true;
-            this.InputClassIdLabel.Location = new System.Drawing.Point(58, 72);
+            this.InputClassIdLabel.Location = new System.Drawing.Point(59, 88);
+            this.InputClassIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.InputClassIdLabel.Name = "InputClassIdLabel";
-            this.InputClassIdLabel.Size = new System.Drawing.Size(35, 13);
+            this.InputClassIdLabel.Size = new System.Drawing.Size(40, 17);
             this.InputClassIdLabel.TabIndex = 3;
             this.InputClassIdLabel.Text = "####";
             // 
             // ClassIdLabel
             // 
             this.ClassIdLabel.AutoSize = true;
-            this.ClassIdLabel.Location = new System.Drawing.Point(3, 72);
+            this.ClassIdLabel.Location = new System.Drawing.Point(4, 88);
+            this.ClassIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClassIdLabel.Name = "ClassIdLabel";
-            this.ClassIdLabel.Size = new System.Drawing.Size(35, 13);
+            this.ClassIdLabel.Size = new System.Drawing.Size(46, 17);
             this.ClassIdLabel.TabIndex = 2;
             this.ClassIdLabel.Text = "Class:";
             // 
             // StudentInputNameLabel
             // 
             this.StudentInputNameLabel.AutoSize = true;
-            this.StudentInputNameLabel.Location = new System.Drawing.Point(58, 0);
+            this.StudentInputNameLabel.Location = new System.Drawing.Point(59, 0);
+            this.StudentInputNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentInputNameLabel.Name = "StudentInputNameLabel";
-            this.StudentInputNameLabel.Size = new System.Drawing.Size(42, 26);
+            this.StudentInputNameLabel.Size = new System.Drawing.Size(40, 34);
             this.StudentInputNameLabel.TabIndex = 1;
             this.StudentInputNameLabel.Text = "########";
             // 
             // StudentNameLabel
             // 
             this.StudentNameLabel.AutoSize = true;
-            this.StudentNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.StudentNameLabel.Location = new System.Drawing.Point(4, 0);
+            this.StudentNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StudentNameLabel.Name = "StudentNameLabel";
-            this.StudentNameLabel.Size = new System.Drawing.Size(47, 13);
+            this.StudentNameLabel.Size = new System.Drawing.Size(45, 34);
             this.StudentNameLabel.TabIndex = 0;
             this.StudentNameLabel.Text = "Student:";
             // 
@@ -138,21 +144,23 @@
             this.tableLayoutPanel3.Controls.Add(this.listView1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(118, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(121, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.78322F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.21678F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1223, 453);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1246, 557);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // StudyButton
             // 
             this.StudyButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StudyButton.Location = new System.Drawing.Point(3, 386);
+            this.StudyButton.Location = new System.Drawing.Point(4, 473);
+            this.StudyButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.StudyButton.Name = "StudyButton";
-            this.StudyButton.Size = new System.Drawing.Size(1217, 64);
+            this.StudyButton.Size = new System.Drawing.Size(1238, 80);
             this.StudyButton.TabIndex = 4;
             this.StudyButton.Text = "Study";
             this.StudyButton.UseVisualStyleBackColor = true;
@@ -170,9 +178,10 @@
             this.GolbalDifficultyRating});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 67);
+            this.listView1.Location = new System.Drawing.Point(4, 82);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1217, 313);
+            this.listView1.Size = new System.Drawing.Size(1238, 383);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -223,20 +232,22 @@
             this.tableLayoutPanel4.Controls.Add(this.GenerateReportButton, 3, 0);
             this.tableLayoutPanel4.Controls.Add(this.ReturnedToStoredQuizzesButton, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1217, 58);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1238, 70);
             this.tableLayoutPanel4.TabIndex = 1;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // ResetQuestionButton
             // 
             this.ResetQuestionButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ResetQuestionButton.Location = new System.Drawing.Point(611, 3);
+            this.ResetQuestionButton.Location = new System.Drawing.Point(622, 4);
+            this.ResetQuestionButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ResetQuestionButton.Name = "ResetQuestionButton";
-            this.ResetQuestionButton.Size = new System.Drawing.Size(298, 52);
+            this.ResetQuestionButton.Size = new System.Drawing.Size(301, 62);
             this.ResetQuestionButton.TabIndex = 3;
             this.ResetQuestionButton.Text = "Reset Question";
             this.ResetQuestionButton.UseVisualStyleBackColor = true;
@@ -245,9 +256,10 @@
             // ReturnButton
             // 
             this.ReturnButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReturnButton.Location = new System.Drawing.Point(3, 3);
+            this.ReturnButton.Location = new System.Drawing.Point(4, 4);
+            this.ReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(298, 52);
+            this.ReturnButton.Size = new System.Drawing.Size(301, 62);
             this.ReturnButton.TabIndex = 0;
             this.ReturnButton.Text = "Return To Menu";
             this.ReturnButton.UseVisualStyleBackColor = true;
@@ -256,9 +268,10 @@
             // GenerateReportButton
             // 
             this.GenerateReportButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GenerateReportButton.Location = new System.Drawing.Point(915, 3);
+            this.GenerateReportButton.Location = new System.Drawing.Point(931, 4);
+            this.GenerateReportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GenerateReportButton.Name = "GenerateReportButton";
-            this.GenerateReportButton.Size = new System.Drawing.Size(299, 52);
+            this.GenerateReportButton.Size = new System.Drawing.Size(303, 62);
             this.GenerateReportButton.TabIndex = 1;
             this.GenerateReportButton.Text = "Generate Report";
             this.GenerateReportButton.UseVisualStyleBackColor = true;
@@ -267,9 +280,10 @@
             // ReturnedToStoredQuizzesButton
             // 
             this.ReturnedToStoredQuizzesButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReturnedToStoredQuizzesButton.Location = new System.Drawing.Point(307, 3);
+            this.ReturnedToStoredQuizzesButton.Location = new System.Drawing.Point(313, 4);
+            this.ReturnedToStoredQuizzesButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReturnedToStoredQuizzesButton.Name = "ReturnedToStoredQuizzesButton";
-            this.ReturnedToStoredQuizzesButton.Size = new System.Drawing.Size(298, 52);
+            this.ReturnedToStoredQuizzesButton.Size = new System.Drawing.Size(301, 62);
             this.ReturnedToStoredQuizzesButton.TabIndex = 2;
             this.ReturnedToStoredQuizzesButton.Text = "Return To Stored Quizzes";
             this.ReturnedToStoredQuizzesButton.UseVisualStyleBackColor = true;
@@ -277,10 +291,11 @@
             // 
             // ViewStats
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 459);
+            this.ClientSize = new System.Drawing.Size(1371, 565);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewStats";
             this.Text = "ViewStats";
             this.tableLayoutPanel1.ResumeLayout(false);

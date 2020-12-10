@@ -34,19 +34,21 @@
             // 
             // SendQuizScoresButton
             // 
-            this.SendQuizScoresButton.Location = new System.Drawing.Point(271, 129);
+            this.SendQuizScoresButton.Location = new System.Drawing.Point(352, 164);
+            this.SendQuizScoresButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SendQuizScoresButton.Name = "SendQuizScoresButton";
-            this.SendQuizScoresButton.Size = new System.Drawing.Size(246, 138);
+            this.SendQuizScoresButton.Size = new System.Drawing.Size(328, 170);
             this.SendQuizScoresButton.TabIndex = 0;
-            this.SendQuizScoresButton.Text = "Send Quiz Scores";
+            this.SendQuizScoresButton.Text = "Click to Send Teacher Email";
             this.SendQuizScoresButton.UseVisualStyleBackColor = true;
             this.SendQuizScoresButton.Click += new System.EventHandler(this.SendQuizScoresButton_Click);
             // 
             // ReturnButton
             // 
-            this.ReturnButton.Location = new System.Drawing.Point(13, 15);
+            this.ReturnButton.Location = new System.Drawing.Point(17, 18);
+            this.ReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(84, 48);
+            this.ReturnButton.Size = new System.Drawing.Size(112, 59);
             this.ReturnButton.TabIndex = 1;
             this.ReturnButton.Text = "Return";
             this.ReturnButton.UseVisualStyleBackColor = true;
@@ -54,11 +56,12 @@
             // 
             // SendQuizInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ReturnButton);
             this.Controls.Add(this.SendQuizScoresButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SendQuizInfo";
             this.Text = "SendEmail";
             this.ResumeLayout(false);

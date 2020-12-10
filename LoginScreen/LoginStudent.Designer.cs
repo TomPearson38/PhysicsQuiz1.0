@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.PasswordInsertBox = new System.Windows.Forms.TextBox();
             this.UsernameInsertLabel = new System.Windows.Forms.Label();
             this.UsernameInsertBox = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.DisplayHash = new System.Windows.Forms.TextBox();
             this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(356, 201);
+            this.LoginButton.Location = new System.Drawing.Point(475, 247);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.Size = new System.Drawing.Size(100, 28);
             this.LoginButton.TabIndex = 2;
             this.LoginButton.Text = "Login";
             this.LoginButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -53,54 +51,47 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(251, 166);
+            this.PasswordLabel.Location = new System.Drawing.Point(335, 204);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
+            this.PasswordLabel.Size = new System.Drawing.Size(69, 17);
             this.PasswordLabel.TabIndex = 21;
             this.PasswordLabel.Text = "Password";
             // 
             // PasswordInsertBox
             // 
-            this.PasswordInsertBox.Location = new System.Drawing.Point(333, 163);
+            this.PasswordInsertBox.Location = new System.Drawing.Point(444, 201);
+            this.PasswordInsertBox.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordInsertBox.Name = "PasswordInsertBox";
             this.PasswordInsertBox.PasswordChar = '*';
-            this.PasswordInsertBox.Size = new System.Drawing.Size(157, 20);
+            this.PasswordInsertBox.Size = new System.Drawing.Size(208, 22);
             this.PasswordInsertBox.TabIndex = 1;
             this.PasswordInsertBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordInsertBox_KeyDown);
             // 
             // UsernameInsertLabel
             // 
             this.UsernameInsertLabel.AutoSize = true;
-            this.UsernameInsertLabel.Location = new System.Drawing.Point(251, 123);
+            this.UsernameInsertLabel.Location = new System.Drawing.Point(335, 151);
+            this.UsernameInsertLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsernameInsertLabel.Name = "UsernameInsertLabel";
-            this.UsernameInsertLabel.Size = new System.Drawing.Size(55, 13);
+            this.UsernameInsertLabel.Size = new System.Drawing.Size(73, 17);
             this.UsernameInsertLabel.TabIndex = 19;
             this.UsernameInsertLabel.Text = "Username";
             // 
             // UsernameInsertBox
             // 
-            this.UsernameInsertBox.Location = new System.Drawing.Point(333, 120);
+            this.UsernameInsertBox.Location = new System.Drawing.Point(444, 148);
+            this.UsernameInsertBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsernameInsertBox.Name = "UsernameInsertBox";
-            this.UsernameInsertBox.Size = new System.Drawing.Size(157, 20);
+            this.UsernameInsertBox.Size = new System.Drawing.Size(208, 22);
             this.UsernameInsertBox.TabIndex = 0;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // DisplayHash
-            // 
-            this.DisplayHash.Location = new System.Drawing.Point(308, 271);
-            this.DisplayHash.Name = "DisplayHash";
-            this.DisplayHash.Size = new System.Drawing.Size(157, 20);
-            this.DisplayHash.TabIndex = 23;
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(18, 12);
+            this.BackButton.Location = new System.Drawing.Point(24, 15);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(67, 38);
+            this.BackButton.Size = new System.Drawing.Size(89, 47);
             this.BackButton.TabIndex = 24;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -108,16 +99,16 @@
             // 
             // LoginStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.DisplayHash);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.PasswordInsertBox);
             this.Controls.Add(this.UsernameInsertLabel);
             this.Controls.Add(this.UsernameInsertBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginStudent";
             this.Text = "LoginStudent";
             this.Load += new System.EventHandler(this.LoginStudent_Load);
@@ -132,8 +123,6 @@
         private System.Windows.Forms.TextBox PasswordInsertBox;
         private System.Windows.Forms.Label UsernameInsertLabel;
         private System.Windows.Forms.TextBox UsernameInsertBox;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox DisplayHash;
         private System.Windows.Forms.Button BackButton;
     }
 }

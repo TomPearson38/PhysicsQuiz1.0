@@ -14,5 +14,9 @@ namespace PhysicsQuiz1._0.Classes
             int cqpercentage = (int)(Math.Round(percent, 2) * 100);
             return cqpercentage;
         }
+
+        //Takes in two values of the number of times the question has been answered 
+        //and how many times it was answered correctly. It then works out the percentage of the 
+        //time it was answered correctly based upon this information.
     }
 }

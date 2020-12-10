@@ -8,6 +8,7 @@ namespace PhysicsQuiz1._0.Classes
 {
     public class SearchCriteria
     {
+        //When the user is searching for a question, the critiera that they use is stored into this class
         public string Search { get; set; }
         public int Difficulty { get; set; }
         public int Difficulty1 { get; set; }

@@ -16,23 +16,24 @@ namespace PhysicsQuiz1._0.GeneralForms
     {
         int selectedmode = 0;
 
-        List<StoredQuestions> questions = new List<StoredQuestions>();
-        List<StoredQuestions> AllQuestions = new List<StoredQuestions>();
-        ObservableCollection<StoredQuestions> NewQuiz = new ObservableCollection<StoredQuestions>();
+        List<StoredQuestions> questions = new List<StoredQuestions>(); //Holds all of the relevant stored questions based upon criteria
+        List<StoredQuestions> AllQuestions = new List<StoredQuestions>(); //Holds the all of the stored questions
+        ObservableCollection<StoredQuestions> NewQuiz = new ObservableCollection<StoredQuestions>(); //Holds the selected quiz questions by the user
 
-        public event EventHandler ClosedPage;
-        bool formclosing = false;
+        public event EventHandler ClosedPage; //Triggers an event from when the form is closed
+        bool formclosing = false; //A boolean used to hold if the form is closing or not.
 
         public GenerateQuizManual()
         {
             InitializeComponent();
             QuestionClass qc = new QuestionClass();
-            AllQuestions = qc.LoadAllQuestions();
-            QuestionListBox.DataSource = AllQuestions;
+            AllQuestions = qc.LoadAllQuestions(); //Loads the questions from the SQL database
+            QuestionListBox.DataSource = AllQuestions; //Adds the questions to the question list box 
             QuestionListBox.DisplayMember = "DisplayItem";
             QuestionHeaderLabel.Hide();
             AnswerHeaderLabel.Hide();
             DifficultyCheckBox.Hide();
+            //Sets the question to hide the empty question details
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -47,6 +48,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void QuestionListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            //When the user selects a question the question information is displayed over the previous, this code completes that action
             AnswerHeaderLabel.Show();
             QuestionHeaderLabel.Show();
             if (QuestionListBox.SelectedItem == null)
@@ -55,6 +57,7 @@ namespace PhysicsQuiz1._0.GeneralForms
             }
             else
             {
+                //Assigning the selected question to a variable
                 StoredQuestions SelectedQuestion = (StoredQuestions)QuestionListBox.SelectedItem;
                 if (SelectedQuestion.PictureUrl == "" || SelectedQuestion.PictureUrl == null)
                 {
@@ -74,11 +77,13 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void SearchButton_Click_1(object sender, EventArgs e)
         {
+            //All relevant question search criteria must be saved to the class SearchCriteria
             QuestionClass qc = new QuestionClass();
             SearchCriteria sc = new SearchCriteria();
 
             sc.Search = SearchBarTextBox.Text;
-
+            //The user`s selected topics are added the the criteria
+            //If they have selected no topics it will select them all
             if ((TopicCheckedListBox.CheckedItems.Count == 0) || (TopicCheckedListBox.CheckedItems.Count == 5))
             {
                 sc.Topic1 = 1;
@@ -116,7 +121,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                     sc.Topic5 = 5;
                 }
             }
-
+            //If the user selects no areas all of them are selected otherwise it will follow onto
             if (AreaCheckedListBox.CheckedItems.Count == 0 || AreaCheckedListBox.CheckedItems.Count == 2)
             {
                 sc.Area = 1;
@@ -136,6 +141,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                 }
             }
 
+            //The selected difficulty must be choesen and it will then assign values to search criteria based upon it
             if (selectedmode == 2)
             {
                 sc = GeneratedDifficulty(sc);
@@ -154,6 +160,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private SearchCriteria PredefDifficultySearch(SearchCriteria sc)
         {
+            //If the user selects predefined difficulty this function is called in order to save the correct data to the Search Criteria
             if ((DifficultyCheckBox.CheckedItems.Count == 3) || (DifficultyCheckBox.CheckedItems.Count == 0))
             {
                 sc.Difficulty = 1;
@@ -183,6 +190,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private SearchCriteria GeneratedDifficulty(SearchCriteria sc)
         {
+            //If the user selects Generated difficulty this function is called in order to save the correct data to the Search Criteria
             if (DifficultyCheckBox.CheckedItems.Count == 4 || DifficultyCheckBox.CheckedItems.Count == 0)
             {
                 sc.Difficulty = 1;
@@ -215,6 +223,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            //When the add button is pressed the question must be coppied from the stored questions, to the NewQuiz collection
             if (QuestionListBox.SelectedItem == null)
             {
                 return;
