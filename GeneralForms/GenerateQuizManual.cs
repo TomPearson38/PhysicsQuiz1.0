@@ -141,7 +141,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                 }
             }
 
-            //The selected difficulty must be choesen and it will then assign values to search criteria based upon it
+            //The selected difficulty must be chosen and it will then assign values to search criteria based upon it
             if (selectedmode == 2)
             {
                 sc = GeneratedDifficulty(sc);

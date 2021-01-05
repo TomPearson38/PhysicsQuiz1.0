@@ -14,29 +14,30 @@ namespace PhysicsQuiz1._0.StudentForms
 {
     public partial class TextQuestionForm : Form
     {
-        private Random Dice = new Random();
+        public event EventHandler<bool> Answered; //Event for when the question has been answered is created
 
-        public event EventHandler<bool> Answered;
+        StoredQuestions CurrentQuestion = new StoredQuestions(); //The current question is stored here
 
-        StoredQuestions CurrentQuestion = new StoredQuestions();
-
-        public TextQuestionForm(StoredQuestions CQuestions)
+        public TextQuestionForm(StoredQuestions CQuestions) 
         {
             InitializeComponent();
 
-            CurrentQuestion = CQuestions;
+            CurrentQuestion = CQuestions; //The paramter of the current question is passed into the form
 
-            QuestionLabel.Text = CurrentQuestion.Question;
+            QuestionLabel.Text = CurrentQuestion.Question; //The currentquestion`s question is displayed
 
-            List<string> Answers = new List<string>();
+            List<string> Answers = new List<string>(); //A new list of answers is created
 
+            //Each individual answer that is stored in currentquestion including the correct answer and the 3 incorrect ones
             Answers.Add(CurrentQuestion.CorrectAns);
             Answers.Add(CurrentQuestion.IncorrectAns1);
             Answers.Add(CurrentQuestion.IncorrectAns2);
             Answers.Add(CurrentQuestion.IncorrectAns3);
 
+            //Answers are shuffled
             Answers = Answers.OrderBy(x => Guid.NewGuid()).ToList();
 
+            //The answers are assigned to the radio buttons
             AnswerRadioButton1.Text = $"{Answers.ElementAt(0)}";
             AnswerRadioButton2.Text = $"{ Answers.ElementAt(1)}";
             AnswerRadioButton3.Text = $"{ Answers.ElementAt(2)}";
@@ -47,6 +48,7 @@ namespace PhysicsQuiz1._0.StudentForms
         {
             RadioButton checkedButton;
 
+            //Checks to see if the user has selected an answer
             if (AnswerRadioButton1.Checked == true)
             {
                 checkedButton = AnswerRadioButton1;
@@ -68,6 +70,8 @@ namespace PhysicsQuiz1._0.StudentForms
                 return;
             }
 
+            //Answer selected is compared against the correct answer
+            //A message is displayed telling the user their result and their result is returned
             if (checkedButton.Text == CurrentQuestion.CorrectAns)
             {
                 MessageBox.Show("Correct", "Well Done", MessageBoxButtons.OK);
@@ -79,7 +83,7 @@ namespace PhysicsQuiz1._0.StudentForms
                 Answered?.Invoke(this, false);
             }
 
-            this.Close();
+            this.Close(); //Form is closed
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -15,11 +15,11 @@ namespace PhysicsQuiz1._0.StudentForms
     public partial class AutoCreateForm : Form
     {
         int selectedmode = 0;
-        List<StoredQuestions> questions = new List<StoredQuestions>();
-        List<StoredQuestions> AllQuestions = new List<StoredQuestions>();
+        List<StoredQuestions> questions = new List<StoredQuestions>(); //Holds all of the relevant stored questions based upon criteria
+        List<StoredQuestions> AllQuestions = new List<StoredQuestions>(); //Holds the all of the stored questions
 
-        public event EventHandler ClosedPage;
-        bool formclosing = false;
+        public event EventHandler ClosedPage; //Triggers an event from when the form is closed
+        bool formclosing = false; //A boolean used to hold if the form is closing or not.
 
         public AutoCreateForm()
         {
@@ -29,6 +29,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         private void DifficultyTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Changes the contents of the difficulty combo box based upon which option the user selects
             DifficultyCheckBox.Show();
             if (DifficultyTypeComboBox.SelectedItem.ToString() == "Pre-defined Difficulty Setting")
             {
@@ -65,6 +66,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
             try
             {
+                //The user specifies number of questions that they want the quiz to contain
                 if (int.Parse(NumberOfQuestionsTextBox.Text) <= 15 && int.Parse(NumberOfQuestionsTextBox.Text) >= 3)
                 {
                     numberselected = int.Parse(NumberOfQuestionsTextBox.Text);
@@ -77,12 +79,14 @@ namespace PhysicsQuiz1._0.StudentForms
             }
             catch (Exception)
             {
+                //If the user doesn`t input a correct number of questions then the exception is thrown
                 MessageBox.Show("Invaid Number Entered, please enter a value between 3 and 15", "Error", MessageBoxButtons.OK);
                 return;
             }
 
             if ((TopicCheckedListBox.CheckedItems.Count == 0) || (TopicCheckedListBox.CheckedItems.Count == 5))
             {
+                //If no question topics or all of them are selected then all of the topics are selected
                 sc.Topic1 = 1;
                 sc.Topic2 = 2;
                 sc.Topic3 = 3;
@@ -91,6 +95,7 @@ namespace PhysicsQuiz1._0.StudentForms
             }
             else
             {
+                //Otherwise each question must be checked individually to see if it has been selected
                 if (TopicCheckedListBox.CheckedItems.Contains("Particles"))
                 {
                     sc.Topic1 = 1;
@@ -121,11 +126,13 @@ namespace PhysicsQuiz1._0.StudentForms
 
             if (AreaCheckedListBox.CheckedItems.Count == 0 || AreaCheckedListBox.CheckedItems.Count == 2)
             {
+                //If no question areas or all of them are selected then all of the areas are selected
                 sc.Area = 1;
                 sc.Area1 = 2;
             }
             else
             {
+                //Otherwise each question must be checked individually to see if it has been selected
                 if (AreaCheckedListBox.CheckedItems.Contains("Recall"))
                 {
                     sc.Area = 1;
@@ -138,6 +145,7 @@ namespace PhysicsQuiz1._0.StudentForms
                 }
             }
 
+            //The selected difficulty must be chosen and it will then assign values to search criteria based upon it
             if (selectedmode == 2)
             {
                 sc = GeneratedDifficulty(sc);
@@ -149,9 +157,11 @@ namespace PhysicsQuiz1._0.StudentForms
                 AllQuestions = qc.GetQuestionsForSearch(sc, false);
             }
 
+            //The stored questions are reshuffled by this line of code
             List<StoredQuestions> ShuffledQuizQuestions = AllQuestions.OrderBy(x => Guid.NewGuid()).ToList();
             questions = new List<StoredQuestions>();
 
+            //The first to specified number by the user number of questions is saved to the list to be returned containing the quiz questions
             int count = 0;
             while(count < int.Parse(NumberOfQuestionsTextBox.Text) && ShuffledQuizQuestions.Count() > count)
             {
@@ -159,17 +169,20 @@ namespace PhysicsQuiz1._0.StudentForms
                 count++;
             }
 
-
+            //Display members are clarified
             QuestionListBox.DataSource = questions;
             QuestionListBox.DisplayMember = "Question";
 
+            //Displays how many question have been selected from the specified count in case there weren`t enough questions based upon their criteria
             InformationLabel.Text = "Selected " + questions.Count + " questions from criteria returning " + AllQuestions.Count() + " Questions";
         }
 
         public SearchCriteria GeneratedDifficulty(SearchCriteria sc)
         {
+            //If the user selects Generated difficulty this function is called in order to save the correct data to the Search Criteria
             if (DifficultyCheckBox.CheckedItems.Count == 4 || DifficultyCheckBox.CheckedItems.Count == 0)
             {
+                //If the user doesn`t select a difficulty then all are selected
                 sc.Difficulty = 1;
                 sc.Difficulty1 = 2;
                 sc.Difficulty2 = 3;
@@ -177,6 +190,7 @@ namespace PhysicsQuiz1._0.StudentForms
             }
             else
             {
+                //Otherwise the selected difficulties are added to the search criteria
                 if (DifficultyCheckBox.CheckedIndices.Contains(0))
                 {
                     sc.Difficulty = 1;
@@ -194,11 +208,13 @@ namespace PhysicsQuiz1._0.StudentForms
                     sc.Difficulty3 = 4;
                 }
             }
+
             return sc;
         }
 
         private SearchCriteria PredefDifficultySearch(SearchCriteria sc)
         {
+            //If the user selects predefined difficulty this function is called in order to save the correct data to the Search Criteria
             if ((DifficultyCheckBox.CheckedItems.Count == 3) || (DifficultyCheckBox.CheckedItems.Count == 0))
             {
                 sc.Difficulty = 1;
@@ -228,6 +244,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         private void ReshuffleButton_Click(object sender, EventArgs e)
         {
+            //Selects a different number of questions from the specified criteria
             List<StoredQuestions> ShuffledQuizQuestions = AllQuestions.OrderBy(x => Guid.NewGuid()).ToList();
             questions = new List<StoredQuestions>();
 
@@ -245,6 +262,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         private void CreateQuizButton_Click(object sender, EventArgs e)
         {
+            //User names the quiz
             Name = QuizNameTextBox.Text;
             if (Name == "")
             {
@@ -253,11 +271,12 @@ namespace PhysicsQuiz1._0.StudentForms
             }
             else if (questions.Count() < 3 || questions.Count > 15)
             {
+                //If the program has returned an invalid number of questions this error message will be displayed
                 MessageBox.Show("Error, Invalid number of items, please select between 3 and 15 questions. Remove items or create multiple quizzes.", "Error", MessageBoxButtons.OK);
                 return;
             }
 
-
+            //Holds the ID`s of the question that have been selected
             int[] IdNum = new int[questions.Count()];
 
             foreach (StoredQuestions id in questions)
@@ -265,16 +284,18 @@ namespace PhysicsQuiz1._0.StudentForms
                 IdNum[questions.IndexOf(id)] = id.QuestionId;
             }
 
+            //The questions that have been returned based upon the criteria are passed into the CreateQuiz Method of questionclass
             QuestionClass qc = new QuestionClass();
-
             qc.CreateQuiz(IdNum, Name);
 
+            //Displays a success message
             MessageBox.Show("Quiz Created!", "Success", MessageBoxButtons.OK);
 
         }
 
         private void ReturnButton_Click(object sender, EventArgs e)
         {
+            //Closes the form by clicking return button
             formclosing = true;
             this.Close();
             ClosedPage?.Invoke(this, EventArgs.Empty);
@@ -282,6 +303,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
+            //Closes the form by clicking the x
             if (formclosing != true)
             {
                 ReturnButton_Click(this, EventArgs.Empty);

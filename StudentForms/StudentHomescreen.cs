@@ -20,8 +20,8 @@ namespace PhysicsQuiz1._0.StudentForms
         public StudentHomescreen(StudentLogin user)
         {
             InitializeComponent();
-            student = user;
-            WelcomeLabel.Text = $"Welcome {user.FirstName}, Please Select A Mode.";
+            student = user; //The students login info is made global in the form
+            WelcomeLabel.Text = $"Welcome {user.FirstName}, Please Select A Mode."; //A welcome message us displayed
         }
 
         private void WelcomeLabel_Click(object sender, EventArgs e)
@@ -41,6 +41,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         private void ViewQuestionsButton_Click(object sender, EventArgs e)
         {
+            //Launches the viewquestionsform
             ViewAllQuestionsForm pq = new ViewAllQuestionsForm();
             this.Hide();
             pq.Show();
@@ -58,12 +59,14 @@ namespace PhysicsQuiz1._0.StudentForms
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            //Closes all the remaining open forms
             Application.OpenForms[0].Close();
             base.OnFormClosing(e);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
+            //Launches the GenerateQuizManual form
             GenerateQuizManual gq = new GenerateQuizManual();
             this.Hide();
             gq.Show();
@@ -75,6 +78,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //Launches the storedquizzes form
             ViewStoredQuizzes SQ = new ViewStoredQuizzes();
             this.Hide();
             SQ.Show();
@@ -88,6 +92,7 @@ namespace PhysicsQuiz1._0.StudentForms
 
         private void ViewStatsCall(ViewStoredQuizzes VS,StoredQuizzes storedQuizzes, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions)
         {
+            //Launches the viewstats form
             ViewStats vs = new ViewStats(student, storedQuizzes, storedQuestions, storedQuizQuestions);
             vs.Show();
 
@@ -98,12 +103,14 @@ namespace PhysicsQuiz1._0.StudentForms
 
             vs.OpenStoredQuizzes += (source, EventArgs) =>
             {
+                //The user can specify to return to the storedquizzes, if they wish to do that this event is called
                 button3_Click(null, EventArgs.Empty);
             };
         }
 
         private void GenerateNewQuizAutoButton_Click(object sender, EventArgs e)
         {
+            //Launches the auto create quiz form
             AutoCreateForm ACF = new AutoCreateForm();
             this.Hide();
             ACF.Show();
