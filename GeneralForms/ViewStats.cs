@@ -15,13 +15,14 @@ namespace PhysicsQuiz1._0.GeneralForms
 {
     public partial class ViewStats : Form
     {
+        //Views all the stats from the quiz that the student has answered
         private StudentLogin Student = new StudentLogin();
 
         List<StoredQuestions> ListOfStoredQuestions = new List<StoredQuestions>();
 
         StoredQuizzes SelectedQuiz = new StoredQuizzes();
 
-        List<StoredQuizQuestions> QuizQuestionsId = new List<StoredQuizQuestions>();
+        List<StoredQuizQuestions> QuizQuestionsId = new List<StoredQuizQuestions>(); //For each answered quiz question the quiz questionID must be saved to this list
 
         List<CompletedQuestion> completedQuestion = new List<CompletedQuestion>();
 
@@ -37,7 +38,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void setup(StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions, List<CompletedQuestion> cquestion)
         {
-
+            //In a seperate sub as the page may need to be refreshed when the student has answered the quiz again
 
             if (cquestion == null)
             {
@@ -46,9 +47,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                 InputClassIdLabel.Text = student.ClassId.ToString();
 
                 QuestionClass qc = new QuestionClass();
-
-                //CQuiz = qc.GetCompletedQuiz(SQuiz.QuizId, student.StudentId);
-
+                //If the CompletedQuiz has not be loaded from the data base it will load it here 
                 if (CQuiz == null)
                 {
                     CQuiz.Id = SQuiz.QuizId;
@@ -61,6 +60,8 @@ namespace PhysicsQuiz1._0.GeneralForms
             }
             else
             {
+                //If the questions have already been answered and the user wishes to return to their stats then the page needs to be refreshed but we don`t need to
+                //query the database again
                 listView1.Items.Clear();
                 listView1.Refresh();
                 completedQuestion = cquestion;
@@ -68,6 +69,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             foreach (StoredQuestions sq in storedQuestions)
             {
+                //Assigns the relevant stats the the rows for each question on the table
                 ListViewItem b = new ListViewItem(sq.Question);
                 if (sq.Area == 1)
                 {
@@ -98,17 +100,19 @@ namespace PhysicsQuiz1._0.GeneralForms
                 {
                     b.SubItems.Add("Electricity");
                 }
-
+                
+                //For each question answered in completed questions, the loop checks to see if it is equal to the current stored question ID.
                 foreach (CompletedQuestion cq in completedQuestion)
                 {
                     if (cq.QuestionId == sq.QuestionId)
                     {
+                        //If the question is the same then the code adds the question`s stats to the table containing their scores (times answered, times correct, difficulty score, etc)
                         b.SubItems.Add(cq.XCompleted.ToString());
                         b.SubItems.Add(cq.XCorrect.ToString());
                         string score = DifficultyScore(cq.CalculatedDifficulty);
                         b.SubItems.Add(score);
                         b.SubItems.Add(cq.CalculatedDifficulty.ToString());
-                        break;
+                        break; //braks the loop so that there is no more wasted loops
                     }
                 }
                 listView1.Items.Add(b);
@@ -122,7 +126,8 @@ namespace PhysicsQuiz1._0.GeneralForms
             SelectedQuiz = SQuiz;
 
             QuizQuestionsId = storedQuizQuestions;
-            
+            //saves varaibles to the program so that if the user starts a quiz then they don`t need to be retrived and are ready to be called
+
         }
 
 
@@ -140,11 +145,13 @@ namespace PhysicsQuiz1._0.GeneralForms
         {
             this.Close();
             OpenStoredQuizzes?.Invoke(this, EventArgs.Empty);
+            //Closes the form and opens the previous one
         }
 
         private void GenerateReportButton_Click(object sender, EventArgs e)
         {
-            SendQuizInfo SQI = new SendQuizInfo(Student, ListOfStoredQuestions, completedQuestion, SelectedQuiz);
+            //When pressed this button the quiz generates a report which will be sent to the teacher containing the student scores
+            SendQuizInfo SQI = new SendQuizInfo(Student, ListOfStoredQuestions, completedQuestion, SelectedQuiz); //This opens the form containing the contorols in which the email is sent
 
             this.Hide();
 
@@ -153,33 +160,34 @@ namespace PhysicsQuiz1._0.GeneralForms
             SQI.FormClosed += (source, EventArgs) =>
             {
                 this.Show();
-            };
+            }; //The form closed event will be triggered when the user closes the send email form
         }
 
         private void StudyButton_Click(object sender, EventArgs e)
         {
-            StartQuizForm SQF = new StartQuizForm(Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, CQuiz, completedQuestion);
+            StartQuizForm SQF = new StartQuizForm(Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, CQuiz, completedQuestion); //Opens the form containing the starting quiz information
 
             this.Hide();
 
             SQF.Show();
 
-            SQF.CompletedQuiz += NewViewStats;
+            SQF.CompletedQuiz += NewViewStats; //Method retrives the stats from the start quiz page based upon how well they did and then refreshes the page
 
             SQF.FormClosed += (source, EventArgs) =>
             {
                 this.Show();
-            };
+            }; //When the start quiz form is closed then this event is triggered
 
         }
 
         private void NewViewStats(StartQuizForm SQF, StudentLogin student, StoredQuizzes SQuiz, List<StoredQuestions> storedQuestions, List<StoredQuizQuestions> storedQuizQuestions, List<CompletedQuestion> cq)
         {
-            setup(student, SQuiz, storedQuestions, storedQuizQuestions, cq);
+            setup(student, SQuiz, storedQuestions, storedQuizQuestions, cq); //Refresehs the page to display any changes that may have been created when the student either deletes question info or completes a question
         }
 
         private string DifficultyScore(int cq)
         {
+            //This is where the numerical difficulty values are turned into worded difficulty ratinging based upon their scores
             if(cq <= 20)
             {
                 return "Poor";
@@ -200,15 +208,20 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void ResetQuestionButton_Click(object sender, EventArgs e)
         {
+            //This button will reset the question scores
             QuestionClass qc = new QuestionClass();
 
+            //Resets the questions in the database
             qc.ResetScores(completedQuestion);
 
+            //Creates new completed questions
             completedQuestion = new List<CompletedQuestion>();
 
+            //Clears the table on the current page displaying the question stats
             listView1.Items.Clear();
             listView1.Refresh();
 
+            //Runs the setup sub again
             setup(Student, SelectedQuiz, ListOfStoredQuestions, QuizQuestionsId, null);
         }
 

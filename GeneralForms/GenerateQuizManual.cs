@@ -193,6 +193,7 @@ namespace PhysicsQuiz1._0.GeneralForms
             //If the user selects Generated difficulty this function is called in order to save the correct data to the Search Criteria
             if (DifficultyCheckBox.CheckedItems.Count == 4 || DifficultyCheckBox.CheckedItems.Count == 0)
             {
+                //If the user doesn`t select a difficulty then all are selected
                 sc.Difficulty = 1;
                 sc.Difficulty1 = 2;
                 sc.Difficulty2 = 3;
@@ -200,6 +201,7 @@ namespace PhysicsQuiz1._0.GeneralForms
             }
             else
             {
+                //Otherwise the selected difficulties are added to the search criteria
                 if (DifficultyCheckBox.CheckedIndices.Contains(0))
                 {
                     sc.Difficulty = 1;
@@ -230,11 +232,13 @@ namespace PhysicsQuiz1._0.GeneralForms
             }
             else if(NewQuiz.Count() == 15)
             {
+                //Only 15 questions MAX are allowed per quiz so if they try to add too many the program will display this error
                 MessageBox.Show("Error, Invalid number of items, please select between 3 and 15 questions. Remove items or create multiple quizzes.", "Error", MessageBoxButtons.OK);
                 return;
             }
             StoredQuestions SelectedQuestion = (StoredQuestions)QuestionListBox.SelectedItem;
 
+            //If the quiz already contains the question then this message will display
             if (NewQuiz.Contains(SelectedQuestion))
             {
                 string message = "This question has already been added to the quiz!";
@@ -244,8 +248,10 @@ namespace PhysicsQuiz1._0.GeneralForms
                 return;
             }
 
+            //If none of the other criteria have occured it will add the question to the quiz
             NewQuiz.Add(SelectedQuestion);
 
+            //Resets the variables
             QuizListBox.DataSource = null;
             QuizListBox.DataSource = NewQuiz;
             QuizListBox.DisplayMember = "Question";
@@ -255,13 +261,16 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
+            //If no question is selected then the question cannot be removed
             if (QuizListBox.SelectedItem == null)
             {
                 return;
             }
             
+            //The selected question is saved to a variable
             StoredQuestions SelectedQuestion = (StoredQuestions)QuizListBox.SelectedItem;
 
+            //Removes the question from the quiz 
             NewQuiz.Remove(SelectedQuestion);
 
             QuizListBox.DataSource = null;
@@ -274,6 +283,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void QuestionCapacityProgressBar_Click(object sender, EventArgs e)
         {
+            //When the progress bar is pressed this message is displayed
             string message = $"There are {QuestionCapacityProgressBar.Value} out of 15 questions entered";
             string caption = "Information";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
@@ -282,6 +292,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void CreateQuizButton_Click(object sender, EventArgs e)
         {
+            //Once the user has decided that they want to create the quiz then a few validity checks are ran
             Name = QuizNameTextBox.Text;
             if(Name == "")
             {
@@ -294,6 +305,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                 return;
             }
 
+            //If all criteria is passed then the number of questions in the quiz is added to the int[] array with their question ID
             int[] IdNum = new int[NewQuiz.Count()];
 
             foreach(StoredQuestions id in NewQuiz)
@@ -303,6 +315,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
             QuestionClass qc = new QuestionClass();
 
+            //Queries the SQL database to create the quiz
             qc.CreateQuiz(IdNum, Name);
 
             MessageBox.Show("Quiz Created!", "Success", MessageBoxButtons.OK);
@@ -316,6 +329,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void ReturnToMenuButton_Click(object sender, EventArgs e)
         {
+            //Returns to the menu
             formclosing = true;
             this.Close();
             ClosedPage?.Invoke(this, EventArgs.Empty);
@@ -332,6 +346,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void DifficultyTypeComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            //Changes the contents of the difficulty combo box based upon which option the user selects
             DifficultyCheckBox.Show();
             if (DifficultyTypeComboBox.SelectedItem.ToString() == "Pre-defined Difficulty Setting")
             {

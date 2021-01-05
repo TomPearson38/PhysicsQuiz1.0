@@ -17,7 +17,6 @@ namespace PhysicsQuiz1._0.GeneralForms
         bool formclosing = false;
         int selectedmode = 0;
 
-
         List<StoredQuestions> questions = new List<StoredQuestions>();
         List<StoredQuestions> AllQuestions = new List<StoredQuestions>();
 
@@ -28,11 +27,13 @@ namespace PhysicsQuiz1._0.GeneralForms
             InitializeComponent();
             DifficultyCheckBox.Hide();
             QuestionClass qc = new QuestionClass();
+            //All of the questions are loaded from the class and are used as a base to refer to
             AllQuestions = qc.LoadAllQuestions();
             QuestionListBox.DataSource = AllQuestions;
             QuestionListBox.DisplayMember = "DisplayItem";
             QuestionHeaderLabel.Hide();
             AnswerHeaderLabel.Hide();
+            //Sets the question to hide the empty question details
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -62,11 +63,13 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            //All relevant question search criteria must be saved to the class SearchCriteria
             QuestionClass qc = new QuestionClass();
             SearchCriteria sc = new SearchCriteria();
 
             sc.Search = SearchBarTextBox.Text;
-
+            //The user`s selected topics are added the the criteria
+            //If they have selected no topics it will select them all
             if ((TopicCheckedListBox.CheckedItems.Count == 0) || (TopicCheckedListBox.CheckedItems.Count == 5))
             {
                 sc.Topic1 = 1;
@@ -105,7 +108,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                 }
 
             }
-
+            //If the user selects no areas all of them are selected otherwise it will follow onto
             if (AreaCheckedListBox.CheckedItems.Count == 0 || AreaCheckedListBox.CheckedItems.Count == 2)
             {
                 sc.Area = 1;
@@ -124,7 +127,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                     sc.Area1 = 2;
                 }
             }
-
+            //The selected difficulty must be choesen and it will then assign values to search criteria based upon it
             if (selectedmode == 2)
             {
                 sc = GeneratedDifficulty(sc);
@@ -158,6 +161,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void DifficultyTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Changes the contents of the difficulty combo box based upon which option the user selects
             DifficultyCheckBox.Show();
             if (DifficultyTypeComboBox.SelectedItem.ToString() == "Pre-defined Difficulty Setting")
             {
@@ -187,14 +191,17 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private SearchCriteria PredefDifficultySearch(SearchCriteria sc)
         {
+            //If the user selects predefined difficulty this function is called in order to save the correct data to the Search Criteria
             if ((DifficultyCheckBox.CheckedItems.Count == 3) || (DifficultyCheckBox.CheckedItems.Count == 0))
             {
+                //If the user doesn`t select a difficulty then all are selected
                 sc.Difficulty = 1;
                 sc.Difficulty1 = 2;
                 sc.Difficulty2 = 3;
             }
             else
             {
+                //Otherwise the selected difficulties are added to the search criteria
                 if (DifficultyCheckBox.CheckedItems.Contains("1"))
                 {
                     sc.Difficulty = 1;
@@ -216,8 +223,10 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private SearchCriteria GeneratedDifficulty(SearchCriteria sc)
         {
+            //If the user selects Generated difficulty this function is called in order to save the correct data to the Search Criteria
             if (DifficultyCheckBox.CheckedItems.Count == 4 || DifficultyCheckBox.CheckedItems.Count == 0)
             {
+                //If the user doesn`t select a difficulty then all are selected
                 sc.Difficulty = 1;
                 sc.Difficulty1 = 2;
                 sc.Difficulty2 = 3;
@@ -225,6 +234,7 @@ namespace PhysicsQuiz1._0.GeneralForms
             }
             else
             {
+                //Otherwise the selected difficulties are added to the search criteria
                 if (DifficultyCheckBox.CheckedIndices.Contains(0))
                 {
                     sc.Difficulty = 1;
@@ -257,6 +267,7 @@ namespace PhysicsQuiz1._0.GeneralForms
 
         private void QuestionListBox_DoubleClick(object sender, EventArgs e)
         {
+            //When the user selects a question the question information is displayed over the previous, this code completes that action
             AnswerHeaderLabel.Show();
             QuestionHeaderLabel.Show();
             if (QuestionListBox.SelectedItem == null)
@@ -272,6 +283,7 @@ namespace PhysicsQuiz1._0.GeneralForms
                 }
                 else
                 {
+                    //Assigning the selected question to a variable
                     QuestionPictureBox.Show();
                     QuestionPictureBox.Image = Image.FromFile(SelectedQuestion.PictureUrl);
                 }
