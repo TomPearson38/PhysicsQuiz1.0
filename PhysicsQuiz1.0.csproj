@@ -56,6 +56,7 @@
     <Compile Include="Classes\CreateHTMLTable.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\Login.cs" />
     <Compile Include="Classes\QuestionClass.cs" />
     <Compile Include="Classes\SearchCriteria.cs" />
     <Compile Include="Classes\StoredQuestions.cs" />

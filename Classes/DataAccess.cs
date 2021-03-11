@@ -58,7 +58,7 @@ namespace PhysicsQuiz1._0.Classes
                         }
                     }
                 }
-                    catch (System.Data.SqlClient.SqlException)
+                catch (System.Data.SqlClient.SqlException)
                 {
                     return null;
                 }

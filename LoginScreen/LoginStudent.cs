@@ -29,9 +29,7 @@ namespace PhysicsQuiz1._0.LoginScreen
         {
             DataAccess db = new DataAccess(); //The class data access is initilized
 
-            var user = new StudentLogin(); //User is created based upon the student login
-
-            user = db.AttemptStudentLogin(UsernameInsertBox.Text, PasswordInsertBox.Text); //The method attempy student login is called, this takes in the parameters of the username and the password that the user has just input
+            StudentLogin user = db.AttemptStudentLogin(UsernameInsertBox.Text, PasswordInsertBox.Text); //The method attempy student login is called, this takes in the parameters of the username and the password that the user has just input
 
 
             if (user == null)
